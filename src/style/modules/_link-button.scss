@@ -1,0 +1,17 @@
+.link-button {
+  align-items: center;
+  background: $pink;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  display: flex;
+  height: 46px;
+  padding-left: 12px;
+  width: 186px;
+
+  > .text {
+    color: $white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    pointer-events: none;
+  }
+}
