@@ -1,8 +1,5 @@
 .grobal-wrapper {
   overflow: hidden;
-  // font-family: 'Skranji', "Yasashisa";
-  // color: $black;
-  // background-color: #fffcf7;
 }
 
 body,html {
@@ -12,10 +9,10 @@ body,html {
 
 .pointer {
   border-radius: 20px;
-  position: absolute;
-  // background-color: $pink;
+  position: fixed;
   width: 18px;
   height: 18px;
   pointer-events: none;
-  transform: translate(-9px, -9px);
+  top: -9px;
+  left: -9px;
 }

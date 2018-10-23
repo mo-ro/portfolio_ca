@@ -29,8 +29,7 @@ class Layout extends React.Component {
 
   render() {
     let pointerStyle = {
-      top: this.state.y,
-      left: this.state.x,
+      transform: `translate(${this.state.x}px, ${this.state.y}px)`,
       background: this.state.background
     }
 
