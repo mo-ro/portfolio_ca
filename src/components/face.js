@@ -9,7 +9,7 @@ import EyeBall from '../images/eyeball.png';
 class Face extends React.Component {
   render() {
     return (
-      <svg class={this.props.className} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'
+      <svg className={this.props.className} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'
 viewBox='0 0 827 1216'>
           <image width='827' height='1216' id='Hige' xlinkHref={Bg}
           overflow='visible' />

@@ -9,3 +9,13 @@ body,html {
   font-size: 62.5%;
   font-family: museo-sans, sans-serif;
 }
+
+.pointer {
+  border-radius: 20px;
+  position: absolute;
+  // background-color: $pink;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  transform: translate(-9px, -9px);
+}
