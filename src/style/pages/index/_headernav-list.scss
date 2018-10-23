@@ -1,0 +1,15 @@
+.headernav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 388px;
+
+  // > .item {
+
+  // }
+
+  > .item > .link {
+    color: $white;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}

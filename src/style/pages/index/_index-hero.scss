@@ -1,0 +1,21 @@
+.index-hero {
+  display: flex;
+  height: 100vh;
+
+  > .left {
+    background: $pink;
+    flex: 1;
+    padding-left: 85px;
+  }
+
+  > .right {
+    align-items: center;
+    display: flex;
+    flex: 1.618;
+    padding-right: 85px;
+  }
+
+  > .left > .navigation {
+    padding-top: 30px;
+  }
+}

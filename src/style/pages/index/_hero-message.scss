@@ -1,0 +1,19 @@
+.hero-message {
+  margin: 0 0 30px 100px;
+  font-weight: 700;
+
+  > .greeting {
+    font-size: 4rem;
+  }
+
+  > .name {
+    color: $pink;
+    font-size: 10rem;
+    line-height: 1.2;
+    margin-left: -6px;
+  }
+
+  > .job {
+    font-size: 5rem;
+  }
+}
