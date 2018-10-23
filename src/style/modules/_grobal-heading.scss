@@ -1,0 +1,18 @@
+.grobal-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 54px;
+  padding-left: 30px;
+  position: relative;
+
+  &::after {
+    background: $pink;
+    content: "";
+    display: block;
+    width: 18px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+}

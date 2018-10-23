@@ -1,0 +1,14 @@
+.index-about {
+  display: flex;
+
+  > .logo {
+    min-height: 310px;
+  }
+
+  > .text {
+    font-size: 2.4rem;
+    margin-left: 117px;
+    padding-top: 60px;
+    max-width: 691px;
+  }
+}

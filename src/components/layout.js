@@ -17,14 +17,11 @@ class Layout extends React.Component {
 
   renderPointer(event) {
     // console.log(event.target.getAttribute('data-color'))
-    event.persist()
-    setTimeout(() => {
       this.setState({
         x: event.clientX,
         y: event.clientY,
         background: (event.target.getAttribute('data-color') === 'pink' ? '#fff' : '#f73859')
       })
-    }, 100);
   }
 
   render() {

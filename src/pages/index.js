@@ -2,10 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
+import Heading from '../components/heading'
 
 import '../style/pages/index/index.scss'
+
 import Face from '../components/face';
 import Logo from '../images/logo.svg';
+import Fox from '../images/fox-logo.svg';
 
 const IndexPage = () => (
   <Layout>
@@ -40,6 +43,16 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
+
+    <main className="index-main">
+      <Heading text="Kotaro Morooka"/>
+      <div className="index-about">
+        <img className="logo" src={Fox} alt=""/>
+        <div className="text">
+          text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text text text text text text txt text text text text text text text 
+        </div>
+      </div>
+    </main>
   </Layout>
 )
 
