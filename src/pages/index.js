@@ -58,7 +58,7 @@ class IndexPage extends React.Component {
             <div className="right">
               <div className="hero-message">
                 <p className="greeting" data-text="true">Hi, I'm</p>
-                <h1 className="name" data-color="pink" data-text="true">Kotaro</h1>
+                <h1 className="name" data-text="true">Kotaro</h1>
                 <h3 className="job" data-text="true">Front-end Developer</h3>
               </div>
             </div>
@@ -78,6 +78,7 @@ class IndexPage extends React.Component {
           </div>
 
           <Heading text="My works" />
+          
         </main>
       </Layout>
     )

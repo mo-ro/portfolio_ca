@@ -18,5 +18,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `works`,
+        path: `./src/works/`,
+      },
+    },
   ],
 }

@@ -75,6 +75,7 @@ class Face extends React.Component {
 
     let eyeBrowRightStyle = this.setRightBrow(distance)
     let eyeBrowLeftStyle = this.setLeftBrow(distance)
+    let faceStyle
 
     let rightEyeStyle = {
       transform: `translate(${rbcx}px, ${rbcy}px)`
@@ -85,7 +86,7 @@ class Face extends React.Component {
 
     return (
       <svg className={this.props.className} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'
-viewBox='0 0 827 1216' onClick={this.handleClick.bind(this)}>
+viewBox='0 0 827 1216' style={faceStyle} onClick={this.handleClick.bind(this)}>
           <image width='827' height='1216' id='Hige' ref="face" xlinkHref={Bg}
           overflow='visible' />
           {/* <image width='181' height='97' id='EyeBrow-r' xlinkHref={EyeBrow}

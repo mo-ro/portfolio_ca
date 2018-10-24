@@ -48,6 +48,7 @@ class Layout extends React.Component {
       background: this.state.background,
       opacity: this.state.opacity
     }
+    // console.log(this.site.allWorksJson)
 
     return (
       <StaticQuery
@@ -56,6 +57,15 @@ class Layout extends React.Component {
             site {
               siteMetadata {
                 title
+              }
+            },
+            allWorksJson {
+              edges {
+                node {
+                  work {
+                    title
+                  }
+                }
               }
             }
           }
