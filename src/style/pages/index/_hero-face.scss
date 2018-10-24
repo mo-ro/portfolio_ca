@@ -4,4 +4,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 240px;
+
+  .eyeBrow {
+    transition: transform .5s cubic-bezier(.16,.92,.43,1);
+  }
 }
