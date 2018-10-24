@@ -19,16 +19,16 @@ const IndexPage = () => (
           <nav className="navigation">
             <ul className="headernav-list">
               <li className="item">
-                <Link className="link" to="">About</Link>
+                <Link className="link" to="" data-text="true">About</Link>
               </li>
               <li className="item">
-                <Link className="link" to="">Works</Link>
+                <Link className="link" to="" data-text="true">Works</Link>
               </li>
               <li className="item">
-                <Link className="link" to="">Twitter</Link>
+                <Link className="link" to="" data-text="true">Github</Link>
               </li>
               <li className="item">
-                <Link className="link" to="">LinkedIn</Link>
+                <Link className="link" to="" data-text="true">LinkedIn</Link>
               </li>
             </ul>
           </nav>
@@ -37,9 +37,9 @@ const IndexPage = () => (
         </div>
         <div className="right">
           <div className="hero-message">
-            <p className="greeting">Hi, I'm</p>
-            <h1 className="name" data-color="pink">Kotaro</h1>
-            <h3 className="job">Front-end Developer</h3>
+            <p className="greeting" data-text="true">Hi, I'm</p>
+            <h1 className="name" data-color="pink" data-text="true">Kotaro</h1>
+            <h3 className="job" data-text="true">Front-end Developer</h3>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ const IndexPage = () => (
       <div className="index-about">
         <img className="logo" src={Fox} alt=""/>
         <div className="right">
-          <div className="text">
+          <div className="text" data-text="true">
             text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text text text text text text txt text text text text text text text 
           </div>
           <LinkButton link="#" text="About me"/>

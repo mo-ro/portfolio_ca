@@ -11,7 +11,9 @@ class Layout extends React.Component {
     this.state = {
       x: 0,
       y: 0,
-      background: '#fff'
+      background: '#fff',
+      scale: 1,
+      opacity: 1
     }
   }
 
@@ -20,14 +22,31 @@ class Layout extends React.Component {
       this.setState({
         x: event.clientX,
         y: event.clientY,
-        background: (event.target.getAttribute('data-color') === 'pink' ? '#fff' : '#f73859')
+        background: (event.target.getAttribute('data-color') === 'pink' ? '#fff' : '#f73859'),
+        scale: (event.target.getAttribute('data-text') ? '1.8' : '1'),
+        opacity: (event.target.getAttribute('data-text') ? '.3' : '1'),
       })
+  }
+
+  onMouseDown(event) {
+    this.setState({
+      scale: 1.8,
+      opacity: .3
+    })
+  }
+
+  onMouseUp(event) {
+    this.setState({
+      scale: 1,
+      opacity: 1
+    })
   }
 
   render() {
     let pointerStyle = {
-      transform: `translate(${this.state.x}px, ${this.state.y}px)`,
-      background: this.state.background
+      transform: `translate(${this.state.x}px, ${this.state.y}px) scale(${this.state.scale})`,
+      background: this.state.background,
+      opacity: this.state.opacity
     }
 
     return (
@@ -53,7 +72,7 @@ class Layout extends React.Component {
               <html lang="en" />
             </Helmet>
             <Header siteTitle={data.site.siteMetadata.title} />
-            <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)}>
+            <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
               {this.props.children}
             </div>
             <div className="pointer" style={pointerStyle}></div>

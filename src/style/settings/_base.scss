@@ -6,14 +6,3 @@ body,html {
   font-size: 62.5%;
   font-family: museo-sans, sans-serif;
 }
-
-.pointer {
-  border-radius: 20px;
-  position: fixed;
-  width: 18px;
-  height: 18px;
-  pointer-events: none;
-  top: -9px;
-  left: -9px;
-  transition: transform 0.15s ease-out;
-}
