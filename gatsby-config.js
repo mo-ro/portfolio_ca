@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `works`,
+        name: `webWorks`,
         path: `./src/works/`,
       },
     },

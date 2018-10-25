@@ -48,7 +48,6 @@ class Layout extends React.Component {
       background: this.state.background,
       opacity: this.state.opacity
     }
-    // console.log(this.site.allWorksJson)
 
     return (
       <StaticQuery
@@ -58,36 +57,29 @@ class Layout extends React.Component {
               siteMetadata {
                 title
               }
-            },
-            allWorksJson {
-              edges {
-                node {
-                  work {
-                    title
-                  }
-                }
-              }
             }
           }
         `}
-        render={data => (
-          <>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'Sample' },
-                { name: 'keywords', content: 'sample, something' },
-              ]}
-            >
-              <html lang="en" />
-            </Helmet>
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
-              {this.props.children}
-            </div>
-            <div className="pointer" style={pointerStyle}></div>
-          </>
-        )}
+        render={data => {
+          return(
+            <>
+              <Helmet
+                title={data.site.siteMetadata.title}
+                meta={[
+                  { name: 'description', content: 'Sample' },
+                  { name: 'keywords', content: 'sample, something' },
+                ]}
+              >
+                <html lang="en" />
+              </Helmet>
+              <Header siteTitle={data.site.siteMetadata.title} />
+              <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
+                {this.props.children}
+              </div>
+              <div className="pointer" style={pointerStyle}></div>
+            </>
+          )
+        }}
       />
     )
   }
