@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Bg from '../images/bg.png';
-import EyeBrow from '../images/eyebrow.png';
+// import EyeBrow from '../images/eyebrow.png';
 import Eye from '../images/eye.png';
 import Mouse from '../images/mouse.png';
-import EyeBall from '../images/eyeball.png';
+// import EyeBall from '../images/eyeball.png';
 
 class Face extends React.Component {
 

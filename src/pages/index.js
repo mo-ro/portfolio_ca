@@ -90,16 +90,11 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query pageQuery {
+  query {
     webJson {
       webWorks {
         name
-        created
-        description
-        url
-        tools
         images
-        github
       }
     }
     motionJson {

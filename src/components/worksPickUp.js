@@ -4,7 +4,7 @@ class worksPickUp extends React.Component {
   render() {
     console.log(this.props.works)
     return (
-      <div></div>
+      <div>{this.props.works[0].name}</div>
     )
   }
 }
