@@ -1,0 +1,16 @@
+.workshow-content {
+  display: flex;
+
+  > .right {
+    margin-left: 117px;
+  }
+
+  > .left {
+    width: 489px;
+
+    > .image {
+      margin-bottom: 70px;
+      width: 100%;
+    }
+  }
+}

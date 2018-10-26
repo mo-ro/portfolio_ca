@@ -25,7 +25,7 @@
         "css"
       ],
       "images": [
-        "../images/daily1.png"
+        "career.png"
       ]
     },
     {
@@ -38,7 +38,8 @@
         "css"
       ],
       "images": [
-        "../images/santa.png"
+        "whale.png",
+        "santa.png"
       ]
     }
   ]

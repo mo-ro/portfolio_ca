@@ -1,0 +1,22 @@
+.workshow-info {
+  position: sticky;
+  top: 80px;
+
+  > .name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+
+  > .section {
+    margin-bottom: 40px;
+
+    > .text {
+      font-size: 1.8rem;
+    }
+  }
+
+  > .date {
+    font-size: 1.6rem;
+  }
+}

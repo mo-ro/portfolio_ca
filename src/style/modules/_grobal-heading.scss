@@ -6,12 +6,18 @@
   padding-left: 30px;
   position: relative;
 
+  &[data-type="sub"] {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    padding-left: 28px;
+  }
+
   &::after {
     background: $pink;
     content: "";
     display: block;
     width: 18px;
-    height: 4px;
+    height: 2px;
     position: absolute;
     top: 50%;
     left: 0;
