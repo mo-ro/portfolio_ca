@@ -10,20 +10,6 @@
     &:not(:last-child) {
       margin-right: 16px;
     }
-
-    &:hover {
-      > .figure {
-        border-color: $pink;
-
-        &::after {
-          opacity: 1;
-        }
-      }
-
-      > .name {
-        color: $pink;
-      }
-    }
   }
 
   > .item > .figure {
@@ -49,6 +35,14 @@
       font-weight: 700;
       transition: .3s;
     }
+
+    &:hover {
+      border-color: $pink;
+
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 
   > .item > .figure > .image {
@@ -63,6 +57,10 @@
     font-size: 1.8rem;
     font-weight: 700;
     transition: color .2s;
+
+    &:hover {
+      color: $pink;
+    }
   }
 
   > .item .cover {

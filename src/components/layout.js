@@ -11,9 +11,7 @@ class Layout extends React.Component {
     this.state = {
       x: 0,
       y: 0,
-      background: '#fff',
-      scale: 1,
-      opacity: 1
+      hovertype: null
     }
   }
 
@@ -21,32 +19,74 @@ class Layout extends React.Component {
       this.setState({
         x: event.clientX,
         y: event.clientY,
-        background: (event.target.getAttribute('data-color') === 'pink' ? '#fff' : '#f73859'),
-        scale: (event.target.getAttribute('data-text') ? '1.8' : '1'),
-        opacity: (event.target.getAttribute('data-text') ? '.3' : '1'),
+        hovertype: (event.target.getAttribute('data-hovertype'))
       })
   }
 
   onMouseDown(event) {
-    this.setState({
-      scale: 1.8,
-      opacity: .3
-    })
+    // this.setState({
+    //   scale: 1.8,
+    //   opacity: .3
+    // })
   }
 
   onMouseUp(event) {
-    this.setState({
-      scale: 1,
-      opacity: 1
-    })
+    // this.setState({
+    //   scale: 1,
+    //   opacity: 1
+    // })
+  }
+
+  setPointerStyle() {
+    let pointerStyle = null
+
+    switch (this.state.hovertype) {
+      
+      case 'text':
+        pointerStyle = {
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1.8) rotate(45deg)`,
+          background: '#f73859',
+          opacity: .3
+        }
+        break;
+
+      case 'pink':
+        pointerStyle = {
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
+          background: '#fff',
+          opacity: 1
+        }
+      break;
+
+      case 'link':
+        pointerStyle = {
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
+          background: 'transparent',
+          borderTop: '4px solid #f73859',
+          borderRight: '4px solid #f73859',
+          borderRadius: 0,
+          width: 10,
+          height: 10,
+          opacity: 1,
+        }
+      break;
+    
+      default:
+        pointerStyle = {
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
+          background: '#f73859',
+          opacity: 1
+        }
+        break;
+
+    }
+
+    return pointerStyle
+
   }
 
   render() {
-    let pointerStyle = {
-      transform: `translate(${this.state.x}px, ${this.state.y}px) scale(${this.state.scale})`,
-      background: this.state.background,
-      opacity: this.state.opacity
-    }
+    let pointerStyle = this.setPointerStyle()
 
     return (
       <StaticQuery

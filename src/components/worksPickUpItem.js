@@ -18,8 +18,6 @@ class worksPickUpItem extends React.Component {
       x: event.pageX - event.target.offsetLeft,
       y: event.pageY - event.target.offsetTop
     })
-    console.log(this.state)
-
   }
 
   onMouseLeave(event) {
@@ -39,11 +37,11 @@ class worksPickUpItem extends React.Component {
 
     return (
       <li className="item">
-        <figure className="figure" onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
+        <figure className="figure" data-hovertype="link" onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
           <img className="image" src={image} alt=""/>
           <div className="cover" style={coverStyle}></div>
         </figure>
-        <h3 className="name">{this.props.work.name}</h3>
+        <h3 className="name" data-hovertype="text">{this.props.work.name}</h3>
       </li>
     )
   }

@@ -3,7 +3,7 @@ import React from 'react'
 class Heading extends React.Component {
   render() {
     return (
-      <h2 className="grobal-heading" data-type={this.props.type} data-text="true">
+      <h2 className="grobal-heading" data-type={this.props.type} data-hovertype="text">
         {this.props.text}
       </h2>
     )

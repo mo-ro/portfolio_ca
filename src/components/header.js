@@ -19,7 +19,7 @@ class Header extends React.Component {
               <Link to="works" className="link">Works</Link>
             </li>
             <li className="item">
-              <a href="https://github.com/mo-ro" className="link" target="_blank">GitHub</a>
+              <a href="https://github.com/mo-ro" className="link">GitHub</a>
             </li>
             <li className="item">
               <a href="" className="link">LinkedIn</a>

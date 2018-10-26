@@ -11,11 +11,11 @@ class worksPickUp extends React.Component {
 
     return (
       <section className="works-pickup">
-        <h2 className="heading">{this.props.heading}</h2>
+        <h2 className="heading" data-hovertype="text">{this.props.heading}</h2>
         <ul className="pickup-list">
-          {this.props.works.slice(0, 3).map((work) => {
+          {this.props.works.slice(0, 3).map((work, key) => {
             return (
-              <WorksPickUpItem work={work} />
+              <WorksPickUpItem work={work} key={key} />
             )
           })}
         </ul>

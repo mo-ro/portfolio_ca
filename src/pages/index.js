@@ -35,20 +35,20 @@ class IndexPage extends React.Component {
       <Layout>
           <div className="index-wrapper">
             <div className="index-hero" onMouseMove={this.handleMouseMove.bind(this)}>
-              <div className="left" data-color="pink">
+              <div className="left" data-hovertype="pink">
                 <nav className="navigation">
                   <ul className="headernav-list">
                     <li className="item">
-                      <Link className="link" to="" data-text="true">About</Link>
+                      <Link className="link" to="" data-hovertype="text">About</Link>
                     </li>
                     <li className="item">
-                      <Link className="link" to="" data-text="true">Works</Link>
+                      <Link className="link" to="" data-hovertype="text">Works</Link>
                     </li>
                     <li className="item">
-                      <a className="link" href="https://github.com/mo-ro" data-text="true">GitHub</a>
+                      <a className="link" href="https://github.com/mo-ro" data-hovertype="text">GitHub</a>
                     </li>
                     <li className="item">
-                      <a className="link" href="" data-text="true">LinkedIn</a>
+                      <a className="link" href="" data-hovertype="text">LinkedIn</a>
                     </li>
                   </ul>
                 </nav>
@@ -57,9 +57,9 @@ class IndexPage extends React.Component {
               </div>
               <div className="right">
                 <div className="hero-message">
-                  <p className="greeting" data-text="true">Hi, I'm</p>
-                  <h1 className="name" data-text="true">Kotaro</h1>
-                  <h3 className="job" data-text="true">Front-end Developer</h3>
+                  <p className="greeting" data-hovertype="text">Hi, I'm</p>
+                  <h1 className="name" data-hovertype="text">Kotaro</h1>
+                  <h3 className="job" data-hovertype="text">Front-end Developer</h3>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ class IndexPage extends React.Component {
             <div className="index-about">
               <img className="logo" src={Fox} alt=""/>
               <div className="right">
-                <div className="text" data-text="true">
+                <div className="text" data-hovertype="text">
                   text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text text text text text text txt text text text text text text text 
                 </div>
                 <LinkButton link="#" text="About me"/>

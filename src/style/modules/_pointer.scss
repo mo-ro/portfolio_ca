@@ -1,4 +1,5 @@
 .pointer {
+  border: 0;
   border-radius: 20px;
   position: fixed;
   width: 18px;
@@ -6,6 +7,9 @@
   pointer-events: none;
   top: -9px;
   left: -9px;
-  transition: transform 0.15s ease-out;
+  transition: 
+    transform 0.15s ease-out,
+    border-radius .3s,
+    background .2s;
   z-index: 100;
 }
