@@ -1,7 +1,35 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
+const motionData = require('./src/works/motion/motion.json');
+const webData = require('./src/works/web/web.json');
 
-// You can delete this file if you're not using it
+exports.createPages = ({ boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  const template = path.resolve(`src/pages/workTemplate.js`);
+
+  motionData.motionWorks.forEach((page, index) => {
+    const path = "works/motion/" + (index + 1);
+    console.log(path, 6578)
+
+    createPage({
+      path,
+      component: template,
+      context: {
+        page
+      }
+    });
+  });
+
+  // webData.motionWorks.forEach((page) => {
+  //   const path = page.name;
+
+  //   createPage({
+  //     path,
+  //     component: template,
+
+  //     context: {
+  //       page
+  //     }
+  //   });
+  // });
+};
