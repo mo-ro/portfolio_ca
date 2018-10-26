@@ -18,7 +18,6 @@ class Layout extends React.Component {
   }
 
   renderPointer(event) {
-    // console.log(event.target.getAttribute('data-color'))
       this.setState({
         x: event.clientX,
         y: event.clientY,
@@ -72,8 +71,8 @@ class Layout extends React.Component {
               >
                 <html lang="en" />
               </Helmet>
-              <Header siteTitle={data.site.siteMetadata.title} />
               <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
+              <Header data={data} />
                 {this.props.children}
               </div>
               <div className="pointer" style={pointerStyle}></div>

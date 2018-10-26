@@ -9,8 +9,7 @@ exports.createPages = ({ boundActionCreators }) => {
 
   motionData.motionWorks.forEach((page, index) => {
     const path = "works/motion/" + (index + 1);
-    console.log(path, 6578)
-
+    
     createPage({
       path,
       component: template,

@@ -31,7 +31,6 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    console.log(this.props.data)
     return (
       <Layout>
           <div className="index-wrapper">
@@ -46,10 +45,10 @@ class IndexPage extends React.Component {
                       <Link className="link" to="" data-text="true">Works</Link>
                     </li>
                     <li className="item">
-                      <Link className="link" to="" data-text="true">Github</Link>
+                      <a className="link" href="https://github.com/mo-ro" data-text="true">GitHub</a>
                     </li>
                     <li className="item">
-                      <Link className="link" to="" data-text="true">LinkedIn</Link>
+                      <a className="link" href="" data-text="true">LinkedIn</a>
                     </li>
                   </ul>
                 </nav>
@@ -78,8 +77,8 @@ class IndexPage extends React.Component {
             </div>
 
             <Heading text="My works" />
-            <WorksPickUp works={this.props.data.webJson.webWorks} />
-            <WorksPickUp works={this.props.data.motionJson.motionWorks} />
+            <WorksPickUp works={this.props.data.webJson.webWorks} heading="Web" />
+            <WorksPickUp works={this.props.data.motionJson.motionWorks} heading="Motion" />
           </main>
         </div>
       </Layout>
