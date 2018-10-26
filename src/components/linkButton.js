@@ -13,6 +13,7 @@ class linkButton extends React.Component {
   }
 
   onMouseEnter(event) {
+    console.log(event)
     event.persist()
     this.setState({
       scale: 2,
