@@ -1,0 +1,30 @@
+.about-introduction {
+  align-items: center;
+  display: flex;
+  margin-bottom: 100px;
+
+  > .left {
+    line-height: 1.4;
+    max-width: 691px;
+  }
+
+  > .left > .summary {
+      color: $pink;
+      font-size: 3rem;
+      margin-bottom: 70px;
+  }
+
+  > .left > .text {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  > .right {
+    margin-left: 117px;
+    // padding-top: 60px;
+  }
+
+  > .right > .logo {
+    width: 300px;
+  }
+}
