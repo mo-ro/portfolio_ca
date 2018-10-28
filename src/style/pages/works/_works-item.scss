@@ -1,12 +1,9 @@
 .works-item {
-  align-self: stretch;
   box-sizing: border-box;
   border: 2px solid $black;
   height: 327px;
   margin: 0 10px 40px;
   position: relative;
-  // max-width: 400px;
-  flex-grow: 0;
   width: 287px;
 
   > .figure {

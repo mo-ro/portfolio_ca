@@ -24,7 +24,7 @@ class Works extends React.Component {
             <TabPanel className="panel">
               <UnderLineHeading heading="Web"/>
               <ul className="works-list">
-                {this.props.data.webJson.webWorks.map((work, key) => {
+                {this.props.data.webJson.works.map((work, key) => {
                   return (
                     <WorksItem work={work} key={key} />
                   )
@@ -33,7 +33,7 @@ class Works extends React.Component {
             </TabPanel>
             <TabPanel className="panel">
               <ul className="works-list">
-                {this.props.data.motionJson.motionWorks.map((work, key) => {
+                {this.props.data.motionJson.works.map((work, key) => {
                   return (
                     <WorksItem work={work} key={key} />
                   )
@@ -42,7 +42,7 @@ class Works extends React.Component {
             </TabPanel>
             <TabPanel className="panel">
               <ul className="works-list">
-                {this.props.data.illustJson.illustWorks.map((work, key) => {
+                {this.props.data.illustJson.works.map((work, key) => {
                   return (
                     <WorksItem work={work} key={key} />
                   )
@@ -61,7 +61,7 @@ export default Works
 export const pageQuery = graphql`
   query {
     webJson {
-      webWorks {
+      works {
         name
         created
         description
@@ -69,7 +69,7 @@ export const pageQuery = graphql`
       }
     }
     motionJson {
-      motionWorks {
+      works {
         name
         created
         description
@@ -77,7 +77,7 @@ export const pageQuery = graphql`
       }
     }
     illustJson {
-      illustWorks {
+      works {
         name
         created
         description
