@@ -8,7 +8,9 @@ class Header extends React.Component {
     return (
       <header className="grobal-header">
         <div className="left">
-          <img className="logo" src={Logo} alt=""/>
+          <Link to="/">
+            <img className="logo" src={Logo} alt=""/>
+          </Link>
         </div>
         <div className="right">
           <ul className="grobal-header-list">

@@ -7,19 +7,24 @@ import Header from './header'
 
 class Layout extends React.Component {
   constructor() {
+    console.log(76545678)
     super();
     this.state = {
       x: 0,
       y: 0,
-      hovertype: null
+      hovertype: 'default'
     }
+  }
+
+  componentDidMount(event) {
+    
   }
 
   renderPointer(event) {
       this.setState({
         x: event.clientX,
         y: event.clientY,
-        hovertype: (event.target.getAttribute('data-hovertype'))
+        hovertype: (event.target.getAttribute('data-hovertype')),
       })
   }
 
@@ -70,6 +75,15 @@ class Layout extends React.Component {
           opacity: 1,
         }
       break;
+
+      case 'default':
+        pointerStyle = {
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
+          background: '#fff',
+          opacity: 0
+        }
+
+        break;
     
       default:
         pointerStyle = {
@@ -123,10 +137,6 @@ class Layout extends React.Component {
     )
   }
 }
-
-// const Layout = ({ children }) => (
-  
-// )
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
