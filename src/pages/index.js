@@ -77,9 +77,9 @@ class IndexPage extends React.Component {
             </div>
 
             <Heading text="My works" />
-            <WorksPickUp works={this.props.data.webJson.works} heading="Web" />
-            <WorksPickUp works={this.props.data.motionJson.works} heading="Motion" />
-            <WorksPickUp works={this.props.data.illustJson.works} heading="Illust" />
+            <WorksPickUp worksData={this.props.data.webJson} heading="Web" />
+            <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
+            <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
           </main>
         </div>
       </Layout>
@@ -92,12 +92,14 @@ export default IndexPage
 export const pageQuery = graphql`
   query {
     webJson {
+      type
       works {
         name
         images
       }
     }
     motionJson {
+      type
       works {
         name
         created
@@ -107,6 +109,7 @@ export const pageQuery = graphql`
       }
     }
     illustJson {
+      type
       works {
         name
         images

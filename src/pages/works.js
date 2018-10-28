@@ -24,27 +24,27 @@ class Works extends React.Component {
             <TabPanel className="panel">
               <UnderLineHeading heading="Web"/>
               <ul className="works-list">
-                {this.props.data.webJson.works.map((work, key) => {
+                {this.props.data.webJson.works.map((work, index) => {
                   return (
-                    <WorksItem work={work} key={key} />
+                    <WorksItem work={work} index={index} key={index} />
                   )
                 })}
               </ul>
             </TabPanel>
             <TabPanel className="panel">
               <ul className="works-list">
-                {this.props.data.motionJson.works.map((work, key) => {
+                {this.props.data.motionJson.works.map((work, index) => {
                   return (
-                    <WorksItem work={work} key={key} />
+                    <WorksItem work={work} index={index} key={index}/>
                   )
                 })}
               </ul>
             </TabPanel>
             <TabPanel className="panel">
               <ul className="works-list">
-                {this.props.data.illustJson.works.map((work, key) => {
+                {this.props.data.illustJson.works.map((work, index) => {
                   return (
-                    <WorksItem work={work} key={key} />
+                    <WorksItem work={work} index={index} key={index}/>
                   )
                 })}
               </ul>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 class worksPickUpItem extends React.Component {
 
@@ -27,6 +28,7 @@ class worksPickUpItem extends React.Component {
   }
 
   render() {
+    console.log(this.props, 876)
     const image = require(`../images/${this.props.work.images[0]}`)
 
     let coverStyle = {
@@ -35,14 +37,16 @@ class worksPickUpItem extends React.Component {
       left: this.state.x
     }
 
+    const link = `/works/${this.props.type}/${this.props.index}`
+
     return (
-      <li className="item">
+      <Link className="item" to={link} >
         <figure className="figure" data-hovertype="link" onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
           <img className="image" src={image} alt=""/>
           <div className="cover" style={coverStyle}></div>
         </figure>
         <h3 className="name" data-hovertype="text">{this.props.work.name}</h3>
-      </li>
+      </Link>
     )
   }
 }

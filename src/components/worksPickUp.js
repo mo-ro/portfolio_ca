@@ -8,14 +8,14 @@ class worksPickUp extends React.Component {
   
 
   render() {
-
+    console.log(this.props.worksData, 'alkfsdj')
     return (
       <section className="works-pickup">
         <h2 className="heading" data-hovertype="text">{this.props.heading}</h2>
         <ul className="pickup-list">
-          {this.props.works.slice(0, 3).map((work, key) => {
+          {this.props.worksData.works.slice(0, 3).map((work, index) => {
             return (
-              <WorksPickUpItem work={work} key={key} />
+              <WorksPickUpItem work={work} type={this.props.worksData.type} index={index+1} key={index} />
             )
           })}
         </ul>
