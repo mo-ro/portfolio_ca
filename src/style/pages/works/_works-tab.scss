@@ -1,0 +1,31 @@
+.works-tab {
+  > .list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 100px;
+    width: 790px;
+  }
+
+  > .list > .tab {
+    align-items: center;
+    border: 2px solid $black;
+    cursor: pointer;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 700;
+    justify-content: center;
+    height: 50px;
+    width: 186px;
+
+    &.-selected {
+      background: $pink;
+      color: $white;
+    }
+  }
+
+  > .panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,46 @@
+.works-item {
+  align-self: stretch;
+  box-sizing: border-box;
+  border: 2px solid $black;
+  height: 327px;
+  margin: 0 10px 40px;
+  position: relative;
+  // max-width: 400px;
+  flex-grow: 0;
+  width: 287px;
+
+  > .figure {
+    height: 144px;
+    width: 100%;
+  }
+
+  > .figure > .image {
+    max-height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  > .textarea {
+    box-sizing: border-box;
+    padding: 8px 18px;
+  }
+
+  > .textarea > .name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  > .textarea > .description {
+    font-size: 1.6rem;
+  }
+
+  > .textarea > .date {
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 8px;
+    right: 18px;
+  }
+}
