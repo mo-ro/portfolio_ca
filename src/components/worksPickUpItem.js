@@ -43,7 +43,7 @@ class worksPickUpItem extends React.Component {
 
     return (
       <Link className="item" to={link} >
-        <figure className="figure" data-hovertype="link" onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
+        <figure className="figure" data-hovertype="link" onMouseMove={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
           <img className="image" src={image} alt=""/>
           <div className="cover" style={coverStyle}></div>
         </figure>

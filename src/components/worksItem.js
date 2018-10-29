@@ -41,7 +41,7 @@ class worksItem extends React.Component {
     }
 
     return (
-      <Link className="works-item" to={link} onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
+      <Link className="works-item" to={link} data-hovertype="link-white" onMouseMove={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
         <figure className="figure">
           <img className="image" src={image} alt=""/>
         </figure>

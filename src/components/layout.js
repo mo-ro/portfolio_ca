@@ -75,6 +75,19 @@ class Layout extends React.Component {
         }
       break;
 
+      case 'link-white':
+        pointerStyle = {
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
+          background: 'transparent',
+          borderTop: '4px solid #fff',
+          borderRight: '4px solid #fff',
+          borderRadius: 0,
+          width: 10,
+          height: 10,
+          opacity: 1,
+        }
+      break;
+
       case 'default':
         pointerStyle = {
           transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
