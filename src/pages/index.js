@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import PageTransition from 'gatsby-plugin-page-transitions';
+
 
 import Layout from '../components/layout'
 import Heading from '../components/heading'
@@ -33,6 +35,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
+        <PageTransition>
           <div className="index-wrapper">
             <div className="index-hero" onMouseMove={this.handleMouseMove.bind(this)}>
               <div className="left" data-hovertype="pink">
@@ -64,24 +67,25 @@ class IndexPage extends React.Component {
               </div>
             </div>
 
-          <main className="index-main">
-            <Heading text="Kotaro Morooka"/>
-            <div className="index-about">
-              <img className="logo" src={Fox} alt=""/>
-              <div className="right">
-                <div className="text" data-hovertype="text">
-                  text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text text text text text text txt text text text text text text text 
+            <main className="index-main">
+              <Heading text="Kotaro Morooka"/>
+              <div className="index-about">
+                <img className="logo" src={Fox} alt=""/>
+                <div className="right">
+                  <div className="text" data-hovertype="text">
+                    text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text text text text text text txt text text text text text text text 
+                  </div>
+                  <LinkButton link="/about" text="About me"/>
                 </div>
-                <LinkButton link="#" text="About me"/>
               </div>
-            </div>
 
-            <Heading text="My works" />
-            <WorksPickUp worksData={this.props.data.webJson} heading="Web" />
-            <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
-            <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
-          </main>
-        </div>
+              <Heading text="My works" />
+              <WorksPickUp worksData={this.props.data.webJson} heading="Web" />
+              <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
+              <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
+            </main>
+          </div>
+        </PageTransition>
       </Layout>
     )
   }

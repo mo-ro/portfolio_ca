@@ -43,6 +43,7 @@ class Layout extends React.Component {
 
   setPointerStyle() {
     let pointerStyle = null
+    console.log(this.state.hovertype)
 
     switch (this.state.hovertype) {
       
@@ -58,6 +59,14 @@ class Layout extends React.Component {
         pointerStyle = {
           transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
           background: '#fff',
+          opacity: 1
+        }
+      break;
+
+      case 'header':
+        pointerStyle = {
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1.6) rotate(45deg)`,
+          background: '#f73859',
           opacity: 1
         }
       break;

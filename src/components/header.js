@@ -6,7 +6,7 @@ import Logo from '../images/logo-black.svg'
 class Header extends React.Component {
   render() {
     return (
-      <header className="grobal-header">
+      <header className="grobal-header" data-hovertype="header">
         <div className="left">
           <Link to="/">
             <img className="logo" src={Logo} alt=""/>
