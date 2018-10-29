@@ -11,7 +11,7 @@ import '../style/pages/works/index.scss'
 
 class Works extends React.Component {
   render() {
-    const tabIndex = this.props.location.state.index ? this.props.location.state.index : 0
+    const tabIndex = this.props.location.state ? this.props.location.state.index : 0
 
     return (
       <Layout>

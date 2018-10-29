@@ -37,7 +37,6 @@ class worksPickUp extends React.Component {
             )
           })}
         </ul>
-  }
         <LinkButton text="Show more" link="works" state={{index: index}}/>
       </section>
     )

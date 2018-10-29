@@ -57,7 +57,7 @@ class IndexPage extends React.Component {
               </div>
               <div className="right">
                 <div className="hero-message">
-                  <p className="greeting" data-hovertype="text">Hi, I'm</p>
+                  <p className="greeting" data-hovertype="text">Hi, I<span className="span">'</span>m</p>
                   <h1 className="name" data-hovertype="text">Kotaro</h1>
                   <h3 className="job" data-hovertype="text">Front-end Developer</h3>
                 </div>

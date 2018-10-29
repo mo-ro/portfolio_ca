@@ -12,13 +12,10 @@
   width: 186px;
 
   &::after {
-    border-top: 4px solid $white;
-    border-right: 4px solid $white;
-    box-sizing: border-box;
+    background: $white;
     content: "";
-    transform: rotate(45deg);
     width: 14px;
-    height: 14px;
+    height: 2px;
     position: absolute;
     right: 18px;
   }

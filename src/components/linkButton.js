@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import ReactDOM from 'react-dom';
 
 class linkButton extends React.Component {
 
@@ -13,11 +14,12 @@ class linkButton extends React.Component {
   }
 
   onMouseEnter(event) {
+    var eventDom = ReactDOM.findDOMNode(event.target).getBoundingClientRect();
     event.persist()
     this.setState({
       scale: 2,
-      x: event.pageX - event.target.offsetLeft,
-      y: event.pageY - event.target.offsetTop
+      x: event.clientX - eventDom.left,
+      y: event.clientY - eventDom.top
     })
   }
 
