@@ -13,7 +13,6 @@ class linkButton extends React.Component {
   }
 
   onMouseEnter(event) {
-    console.log(event)
     event.persist()
     this.setState({
       scale: 2,
@@ -37,7 +36,7 @@ class linkButton extends React.Component {
     }
 
     return (
-      <Link to={this.props.link} className="link-button" data-hovertype="link" onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)}>
+      <Link to={this.props.link} className="link-button" data-hovertype="link" onMouseEnter={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} state={this.props.state}>
         <div className="text" data-color="pink">
           {this.props.text}
         </div>

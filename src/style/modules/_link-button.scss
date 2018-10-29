@@ -2,7 +2,7 @@
   align-items: center;
   background: $pink;
   border-radius: 2px;
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+  border: 2px solid $pink;
   box-sizing: border-box;
   display: flex;
   height: 46px;
@@ -10,12 +10,20 @@
   padding-left: 12px;
   position: relative;
   width: 186px;
+
+  &::after {
+    border-top: 4px solid $white;
+    border-right: 4px solid $white;
+    box-sizing: border-box;
+    content: "";
+    transform: rotate(45deg);
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 18px;
+  }
   
   &:hover {
-    border: 2px solid $pink;
-    box-shadow: none;
-    padding-left: 10px;
-
     > .text {
       color: $pink;
     }

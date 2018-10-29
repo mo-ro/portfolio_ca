@@ -7,7 +7,6 @@ import Header from './header'
 
 class Layout extends React.Component {
   constructor() {
-    console.log(76545678)
     super();
     this.state = {
       x: 0,

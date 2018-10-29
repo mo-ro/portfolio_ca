@@ -1,4 +1,18 @@
 .works-tab {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 2px;
+    background: $black;
+    position: absolute;
+    top: 35px;
+    width: 100vw;
+    left: -85px;
+    z-index: -1;
+  }
+
   > .list {
     display: flex;
     justify-content: space-between;
@@ -8,6 +22,7 @@
 
   > .list > .tab {
     align-items: center;
+    background-color: $white;
     border: 2px solid $black;
     cursor: pointer;
     display: flex;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import Heading from '../components/heading'
@@ -10,11 +11,13 @@ import '../style/pages/works/index.scss'
 
 class Works extends React.Component {
   render() {
+    const tabIndex = this.props.location.state.index ? this.props.location.state.index : 0
+
     return (
       <Layout>
         <div className="works-wrapper">
           <Heading text="My works"/>
-          <Tabs className="works-tab" selectedTabClassName="-selected">
+          <Tabs className="works-tab" selectedTabClassName="-selected" defaultIndex={tabIndex}>
             <TabList className="list">
               <Tab className="tab">Web</Tab>
               <Tab className="tab">Motion Graphic</Tab>

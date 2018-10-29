@@ -4,10 +4,29 @@ import LinkButton from './linkButton'
 import WorksPickUpItem from './WorksPickUpItem'
 
 class worksPickUp extends React.Component {
-
   
+  getIndex() {
+    switch (this.props.worksData.type) {
+      case 'web':
+        return 0
+        break;
+
+      case 'motion':
+        return 1
+        break;
+
+      case 'illust':
+        return 2
+        break;
+    
+      default:
+        break;
+    }
+  }
 
   render() {
+    const index = this.getIndex()
+
     return (
       <section className="works-pickup">
         <h2 className="heading" data-hovertype="text">{this.props.heading}</h2>
@@ -18,7 +37,8 @@ class worksPickUp extends React.Component {
             )
           })}
         </ul>
-        <LinkButton text="Show more" link="works"/>
+  }
+        <LinkButton text="Show more" link="works" state={{index: index}}/>
       </section>
     )
   }
