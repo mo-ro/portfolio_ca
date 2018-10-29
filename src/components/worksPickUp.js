@@ -8,7 +8,6 @@ class worksPickUp extends React.Component {
   
 
   render() {
-    console.log(this.props.worksData, 'alkfsdj')
     return (
       <section className="works-pickup">
         <h2 className="heading" data-hovertype="text">{this.props.heading}</h2>

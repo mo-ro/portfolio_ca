@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 class worksItem extends React.Component {
 
@@ -11,9 +12,10 @@ class worksItem extends React.Component {
 
   render() {
     const image = require(`../images/${this.props.work.images[0]}`)
+    const link = `/works/${this.props.type}/${this.props.index}`
 
     return (
-      <li className="works-item">
+      <Link className="works-item" to={link}>
         <figure className="figure">
           <img className="image" src={image} alt=""/>
         </figure>
@@ -22,7 +24,7 @@ class worksItem extends React.Component {
           <div className="description">{this.props.work.description}</div>
           <div className="date">{this.props.work.created}</div>
         </div>
-      </li>
+      </Link>
     )
   }
 }

@@ -28,7 +28,6 @@ class worksPickUpItem extends React.Component {
   }
 
   render() {
-    console.log(this.props, 876)
     const image = require(`../images/${this.props.work.images[0]}`)
 
     let coverStyle = {

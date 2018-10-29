@@ -26,7 +26,7 @@ class Works extends React.Component {
               <ul className="works-list">
                 {this.props.data.webJson.works.map((work, index) => {
                   return (
-                    <WorksItem work={work} index={index} key={index} />
+                    <WorksItem work={work} type={this.props.data.webJson.type} index={index+1} key={index} />
                   )
                 })}
               </ul>
@@ -35,7 +35,7 @@ class Works extends React.Component {
               <ul className="works-list">
                 {this.props.data.motionJson.works.map((work, index) => {
                   return (
-                    <WorksItem work={work} index={index} key={index}/>
+                    <WorksItem work={work} type={this.props.data.motionJson.type} index={index+1} key={index}/>
                   )
                 })}
               </ul>
@@ -44,7 +44,7 @@ class Works extends React.Component {
               <ul className="works-list">
                 {this.props.data.illustJson.works.map((work, index) => {
                   return (
-                    <WorksItem work={work} index={index} key={index}/>
+                    <WorksItem work={work} type={this.props.data.illustJson.type} index={index+1} key={index}/>
                   )
                 })}
               </ul>
@@ -61,6 +61,7 @@ export default Works
 export const pageQuery = graphql`
   query {
     webJson {
+      type
       works {
         name
         created
@@ -69,6 +70,7 @@ export const pageQuery = graphql`
       }
     }
     motionJson {
+      type
       works {
         name
         created
@@ -77,6 +79,7 @@ export const pageQuery = graphql`
       }
     }
     illustJson {
+      type
       works {
         name
         created
