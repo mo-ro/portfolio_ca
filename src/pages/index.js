@@ -15,29 +15,67 @@ import Logo from '../images/logo.svg';
 import Fox from '../images/fox-logo.svg';
 
 class IndexPage extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+
+    super(props);
     this.state = {
       x: 0,
-      y: 0
+      y: 0,
+      scrollFlg: false,
+      isHero: true,
+      isMain: false
+    }
+  }
+
+  openWheel(event) {
+    if(event.deltaY > 16) {
+      this.setState({
+        isHero: false
+      })
+      setTimeout(() => {
+        this.setState({
+          isMain: true
+        })
+      }, 300);
+      // window.scrollTop = 0
+    }
+  }
+
+  closeWheel(event) {
+    if(window.pageYOffset === 0 && event.deltaY < -16) {
+      this.setState({
+        isHero: true
+      })
+      setTimeout(() => {
+        this.setState({
+          isMain: false
+        })
+      }, 500);
     }
   }
 
   handleMouseMove (event) {
-    // let svg = React.findDOMNode(this.refs.svg);
-    // let rect = svg.getBoundingClientRect();
+    console.log(this.state)
     this.setState({
       x: event.clientX,
       y: event.clientY
     });
+
   }
 
   render() {
+    // console.log(window.pageYOffset)
+    let heroStyle = {
+      transform: (this.state.isHero ? 'translate(0, 0)' : 'translate(0, -100%)')
+    }
+    let mainStyle = {
+      display: (this.state.isMain ? 'block' : 'none')
+    }
     return (
       <Layout>
         <PageTransition>
           <div className="index-wrapper">
-            <div className="index-hero" onMouseMove={this.handleMouseMove.bind(this)}>
+            <div className="index-hero" style={heroStyle} onWheel={this.openWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
               <div className="left" data-hovertype="pink">
                 <nav className="navigation">
                   <ul className="headernav-list">
@@ -67,7 +105,7 @@ class IndexPage extends React.Component {
               </div>
             </div>
 
-            <main className="index-main">
+            <main className="index-main" id="main" style={mainStyle} onWheel={this.closeWheel.bind(this)}>
               <Heading text="Kotaro Morooka"/>
               <div className="index-about">
                 <img className="logo" src={Fox} alt=""/>

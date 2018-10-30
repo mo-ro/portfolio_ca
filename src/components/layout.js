@@ -43,7 +43,6 @@ class Layout extends React.Component {
 
   setPointerStyle() {
     let pointerStyle = null
-    console.log(this.state.hovertype)
 
     switch (this.state.hovertype) {
       
