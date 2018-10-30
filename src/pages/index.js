@@ -23,7 +23,8 @@ class IndexPage extends React.Component {
       y: 0,
       scrollAmount: 0,
       isHero: true,
-      isMain: false
+      isMain: false,
+      mainDisplay: false
     }
   }
 
@@ -40,19 +41,12 @@ class IndexPage extends React.Component {
           scrollAmount: delta
         })
       }
-      console.log(event.deltaY)
-
-
-    // setTimeout(() => {
-    //     this.setState({
-    //       scrollAmount: 0
-    //     })
-    // }, 1000);
 
     if(event.deltaY > 10) {
       setTimeout(() => {
         this.setState({
-          isHero: false
+          isHero: false,
+          mainDisplay: true
         })
       }, 800);
       
@@ -60,27 +54,29 @@ class IndexPage extends React.Component {
         this.setState({
           isMain: true
         })
-      }, 1200);
+      }, 1000);
       // window.scrollTop = 0
     }
   }
 
   closeWheel(event) {
+    console.log(event.deltaY)
     this.setState({
       scrollAmount: 0
     })
     if(window.pageYOffset === 0 && event.deltaY < -10) {
       setTimeout(() => {
         this.setState({
-          isHero: true
+          isHero: true,
+          mainDisplay: false
         })
-      }, 100);
+      }, 600);
 
       setTimeout(() => {
         this.setState({
           isMain: false
         })
-      }, 200);
+      }, 400);
     }
   }
 
@@ -94,14 +90,29 @@ class IndexPage extends React.Component {
 
   render() {
     let circleRate = this.state.scrollAmount / 10 * 150
-    let heroStyle = {
-      transform: (this.state.isHero ? 'translate(0, 0)' : 'translate(0, -100%)')
+    let heroStyle = this.state.isHero ? {
+      transform: 'translate(0, 0) scale(1)',
+      opacity: 1
+    } : {
+      transform: 'translate(0, -20px) scale(1)',
+      opacity: 0,
+      pointerEvents: 'none'
     }
-    let mainStyle = {
-      display: (this.state.isMain ? 'block' : 'none')
+    let mainStyle = this.state.isMain ? {
+      opacity: 1,
+      transform: 'translate(0, 0) scale(.95)',
+    } : {
+      opacity: 0,
+      transform: 'translate(0, 0px) scale(1)',
     }
     let circleStyle = {
       transform: `rotate(${circleRate}deg)`
+    }
+
+    let mainDisplayStyle = this.state.mainDisplay ? {
+      display: 'block'
+    } : {
+      display: 'none'
     }
 
     return (
@@ -110,7 +121,7 @@ class IndexPage extends React.Component {
           <div className="index-wrapper">
             <div className="index-hero" style={heroStyle} onWheel={this.openWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
               <div className="left" data-hovertype="pink">
-                <nav className="navigation">
+                {/* <nav className="navigation">
                   <ul className="headernav-list">
                     <li className="item">
                       <Link className="link" to="" data-hovertype="text">About</Link>
@@ -125,7 +136,7 @@ class IndexPage extends React.Component {
                       <a className="link" href="" data-hovertype="text">LinkedIn</a>
                     </li>
                   </ul>
-                </nav>
+                </nav> */}
                 <img className="hero-logo" src={Logo} alt=""/>
                 <Face className="hero-face" x={this.state.x} y={this.state.y}/>
               </div>
@@ -141,7 +152,7 @@ class IndexPage extends React.Component {
               </div>
             </div>
 
-            <main className="index-main" id="main" style={mainStyle} onWheel={this.closeWheel.bind(this)}>
+            <main className="index-main" id="main" style={Object.assign({}, mainStyle, mainDisplayStyle)} onWheel={this.closeWheel.bind(this)}>
               <Heading text="Kotaro Morooka"/>
               <div className="index-about">
                 <img className="logo" src={Fox} alt=""/>

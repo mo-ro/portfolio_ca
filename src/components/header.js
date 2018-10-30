@@ -4,9 +4,26 @@ import { Link } from 'gatsby'
 import Logo from '../images/logo-black.svg'
 
 class Header extends React.Component {
+
+  constructor() {
+    super()
+    this.state = {
+      isScroll: (window.pageYOffset > 0)
+    }
+  }
+
   render() {
+    console.log(window.pageYOffset)
+    let headerStyle = (window.pageYOffset > 0) ? {
+      boxShadow: '0 2px 8px rgba(0, 0, 0, .3)',
+      background: 'rgba(255, 255, 255, .9)',
+    } : {
+      boxShadow: '0 0 0 rgba(0, 0, 0, .3)',
+      background: 'rgba(255, 255, 255, 0)'
+    }
+    console.log(headerStyle)
     return (
-      <header className="grobal-header" data-hovertype="header">
+      <header className="grobal-header" data-hovertype="header" style={headerStyle}>
         <div className="left">
           <Link to="/">
             <img className="logo" src={Logo} alt=""/>
