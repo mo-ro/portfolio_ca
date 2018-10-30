@@ -1,0 +1,25 @@
+.scroll-circle {
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: 6px solid rgb(216, 216, 216);
+  position: absolute;
+  bottom: -180px;
+  width: 284px;
+  height: 284px;
+  transition: .3s;
+  left: 50%;
+  transform: translateX(-50%);
+
+  > .progress {
+    border-radius: 100%;
+    box-sizing: border-box;
+    clip: rect(104px 300px 300px 0);
+    position: absolute;
+    width: 284px;
+    height: 284px;
+    border: 6px solid $pink;
+    transition: transform .5s;
+    top: -6px;
+    left: -6px;
+  }
+}

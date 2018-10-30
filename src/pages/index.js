@@ -21,41 +21,70 @@ class IndexPage extends React.Component {
     this.state = {
       x: 0,
       y: 0,
-      scrollFlg: false,
+      scrollAmount: 0,
       isHero: true,
       isMain: false
     }
   }
 
   openWheel(event) {
-    if(event.deltaY > 16) {
-      this.setState({
-        isHero: false
-      })
+    event.persist()
+      if(event.deltaY > 0 && event.deltaY > this.state.scrollAmount) {
+        let delta
+        if(event.deltaY > 10) {
+          delta = 10
+        } else {
+          delta = event.deltaY
+        }
+        this.setState({
+          scrollAmount: delta
+        })
+      }
+      console.log(event.deltaY)
+
+
+    // setTimeout(() => {
+    //     this.setState({
+    //       scrollAmount: 0
+    //     })
+    // }, 1000);
+
+    if(event.deltaY > 10) {
+      setTimeout(() => {
+        this.setState({
+          isHero: false
+        })
+      }, 800);
+      
       setTimeout(() => {
         this.setState({
           isMain: true
         })
-      }, 300);
+      }, 1200);
       // window.scrollTop = 0
     }
   }
 
   closeWheel(event) {
-    if(window.pageYOffset === 0 && event.deltaY < -16) {
-      this.setState({
-        isHero: true
-      })
+    this.setState({
+      scrollAmount: 0
+    })
+    if(window.pageYOffset === 0 && event.deltaY < -10) {
+      setTimeout(() => {
+        this.setState({
+          isHero: true
+        })
+      }, 100);
+
       setTimeout(() => {
         this.setState({
           isMain: false
         })
-      }, 500);
+      }, 200);
     }
   }
 
   handleMouseMove (event) {
-    console.log(this.state)
     this.setState({
       x: event.clientX,
       y: event.clientY
@@ -64,13 +93,17 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    // console.log(window.pageYOffset)
+    let circleRate = this.state.scrollAmount / 10 * 150
     let heroStyle = {
       transform: (this.state.isHero ? 'translate(0, 0)' : 'translate(0, -100%)')
     }
     let mainStyle = {
       display: (this.state.isMain ? 'block' : 'none')
     }
+    let circleStyle = {
+      transform: `rotate(${circleRate}deg)`
+    }
+
     return (
       <Layout>
         <PageTransition>
@@ -101,6 +134,9 @@ class IndexPage extends React.Component {
                   <p className="greeting" data-hovertype="text">Hi, I<span className="span">'</span>m</p>
                   <h1 className="name" data-hovertype="text">Kotaro</h1>
                   <h3 className="job" data-hovertype="text">Front-end Developer</h3>
+                </div>
+                <div className="scroll-circle">
+                  <div className="progress" style={circleStyle}></div>
                 </div>
               </div>
             </div>
