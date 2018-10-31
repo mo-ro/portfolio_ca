@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import PageTransition from 'gatsby-plugin-page-transitions';
-
 
 import Layout from '../components/layout'
 import Heading from '../components/heading'
@@ -16,7 +14,6 @@ import Fox from '../images/fox-logo.svg';
 
 class IndexPage extends React.Component {
   constructor(props) {
-
     super(props);
     this.state = {
       x: 0,
@@ -30,19 +27,59 @@ class IndexPage extends React.Component {
 
   openWheel(event) {
     event.persist()
-      if(event.deltaY > 0 && event.deltaY > this.state.scrollAmount) {
-        let delta
-        if(event.deltaY > 10) {
-          delta = 10
-        } else {
-          delta = event.deltaY
-        }
-        this.setState({
-          scrollAmount: delta
-        })
-      }
+    // console.log(event.deltaY)
+      // if(event.deltaY > 0 && event.deltaY > this.state.scrollAmount) {
+      //   let delta
+      //   if(event.deltaY >= 1) {
+      //     delta = 1
+      //   } else {
+      //     delta = event.deltaY
+      //   }
+        // this.setState({
+        //   scrollAmount: 1
+        // })
+      // }
 
-    if(event.deltaY > 10) {
+    // if(event.deltaY > 0) {
+    //   setTimeout(() => {
+    //     this.setState({
+    //       isHero: false,
+    //       mainDisplay: true
+    //     })
+    //   }, 800);
+      
+    //   setTimeout(() => {
+    //     this.setState({
+    //       isMain: true
+    //     })
+    //   }, 1000);
+    //   // window.scrollTop = 0
+    // }
+    // console.log(this.state)
+  }
+
+  closeWheel(event) {
+    console.log(event)
+    if(window.pageYOffset === 0 && event.deltaY < 0) {
+      this.setState({
+        scrollAmount: 0
+      })
+      setTimeout(() => {
+        this.setState({
+          isHero: true,
+          mainDisplay: false
+        })
+      }, 600);
+
+      setTimeout(() => {
+        this.setState({
+          isMain: false
+        })
+      }, 400);
+    } else if (window.pageYOffset === 0 && event.deltaY > 0) {
+      this.setState({
+        scrollAmount: 1
+      })
       setTimeout(() => {
         this.setState({
           isHero: false,
@@ -59,27 +96,6 @@ class IndexPage extends React.Component {
     }
   }
 
-  closeWheel(event) {
-    console.log(event.deltaY)
-    this.setState({
-      scrollAmount: 0
-    })
-    if(window.pageYOffset === 0 && event.deltaY < -10) {
-      setTimeout(() => {
-        this.setState({
-          isHero: true,
-          mainDisplay: false
-        })
-      }, 600);
-
-      setTimeout(() => {
-        this.setState({
-          isMain: false
-        })
-      }, 400);
-    }
-  }
-
   handleMouseMove (event) {
     this.setState({
       x: event.clientX,
@@ -89,7 +105,8 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    let circleRate = this.state.scrollAmount / 10 * 150
+    console.log('render')
+    let circleRate = this.state.scrollAmount * 150
     let heroStyle = this.state.isHero ? {
       transform: 'translate(0, 0) scale(1)',
       opacity: 1
@@ -106,7 +123,8 @@ class IndexPage extends React.Component {
       transform: 'translate(0, 0px) scale(1)',
     }
     let circleStyle = {
-      transform: `rotate(${circleRate}deg)`
+      transform: `rotate(${circleRate}deg)`,
+      backgroundColor: ((circleRate === 150) ? 'rgba(247, 56, 89, .2)' : 'rgba(247, 56, 89, 0)')
     }
 
     let mainDisplayStyle = this.state.mainDisplay ? {
@@ -117,60 +135,58 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <PageTransition>
-          <div className="index-wrapper">
-            <div className="index-hero" style={heroStyle} onWheel={this.openWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
-              <div className="left" data-hovertype="pink">
-                {/* <nav className="navigation">
-                  <ul className="headernav-list">
-                    <li className="item">
-                      <Link className="link" to="" data-hovertype="text">About</Link>
-                    </li>
-                    <li className="item">
-                      <Link className="link" to="" data-hovertype="text">Works</Link>
-                    </li>
-                    <li className="item">
-                      <a className="link" href="https://github.com/mo-ro" data-hovertype="text">GitHub</a>
-                    </li>
-                    <li className="item">
-                      <a className="link" href="" data-hovertype="text">LinkedIn</a>
-                    </li>
-                  </ul>
-                </nav> */}
-                <img className="hero-logo" src={Logo} alt=""/>
-                <Face className="hero-face" x={this.state.x} y={this.state.y}/>
+        <div className="index-wrapper">
+          <div className="index-hero" style={heroStyle} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
+            <div className="left" data-hovertype="pink">
+              {/* <nav className="navigation">
+                <ul className="headernav-list">
+                  <li className="item">
+                    <Link className="link" to="" data-hovertype="text">About</Link>
+                  </li>
+                  <li className="item">
+                    <Link className="link" to="" data-hovertype="text">Works</Link>
+                  </li>
+                  <li className="item">
+                    <a className="link" href="https://github.com/mo-ro" data-hovertype="text">GitHub</a>
+                  </li>
+                  <li className="item">
+                    <a className="link" href="" data-hovertype="text">LinkedIn</a>
+                  </li>
+                </ul>
+              </nav> */}
+              <img className="hero-logo" src={Logo} alt=""/>
+              <Face className="hero-face" x={this.state.x} y={this.state.y}/>
+            </div>
+            <div className="right">
+              <div className="hero-message">
+                <p className="greeting" data-hovertype="text">Hi, I<span className="span">'</span>m</p>
+                <h1 className="name" data-hovertype="text">Kotaro</h1>
+                <h3 className="job" data-hovertype="text">Front-end Developer</h3>
               </div>
+              <div className="scroll-circle">
+                <div className="progress" style={circleStyle}></div>
+              </div>
+            </div>
+          </div>
+
+          <main className="index-main" id="main" style={Object.assign({}, mainStyle, mainDisplayStyle)} onWheel={this.closeWheel.bind(this)}>
+            <Heading text="Kotaro Morooka"/>
+            <div className="index-about">
+              <img className="logo" src={Fox} alt=""/>
               <div className="right">
-                <div className="hero-message">
-                  <p className="greeting" data-hovertype="text">Hi, I<span className="span">'</span>m</p>
-                  <h1 className="name" data-hovertype="text">Kotaro</h1>
-                  <h3 className="job" data-hovertype="text">Front-end Developer</h3>
+                <div className="text" data-hovertype="text">
+                  text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text tplayext text text text text txt text text text text text text text 
                 </div>
-                <div className="scroll-circle">
-                  <div className="progress" style={circleStyle}></div>
-                </div>
+                <LinkButton link="/about" text="About me"/>
               </div>
             </div>
 
-            <main className="index-main" id="main" style={Object.assign({}, mainStyle, mainDisplayStyle)} onWheel={this.closeWheel.bind(this)}>
-              <Heading text="Kotaro Morooka"/>
-              <div className="index-about">
-                <img className="logo" src={Fox} alt=""/>
-                <div className="right">
-                  <div className="text" data-hovertype="text">
-                    text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text text text text text text txt text text text text text text text 
-                  </div>
-                  <LinkButton link="/about" text="About me"/>
-                </div>
-              </div>
-
-              <Heading text="My works" />
-              <WorksPickUp worksData={this.props.data.webJson} heading="Web" />
-              <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
-              <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
-            </main>
-          </div>
-        </PageTransition>
+            <Heading text="My works" />
+            <WorksPickUp worksData={this.props.data.webJson} heading="Web" />
+            <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
+            <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
+          </main>
+        </div>
       </Layout>
     )
   }

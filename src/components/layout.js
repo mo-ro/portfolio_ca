@@ -2,8 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import {TransitionGroup, CSSTransition} from 'react-transition-group'
 
 import Header from './header'
+
+// window.onpageshow = function(event) {
+//   console.log('reload')
+// 	if (event.persisted) {
+// 		 window.location.reload();
+// 	}
+// };
+window.onunload = function() {};
 
 class Layout extends React.Component {
   constructor() {

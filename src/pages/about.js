@@ -1,5 +1,4 @@
 import React from 'react'
-import PageTransition from 'gatsby-plugin-page-transitions';
 
 import Layout from '../components/layout'
 import Heading from '../components/heading'
@@ -13,10 +12,10 @@ import motion from '../images/motion-graphics.svg'
 import design from '../images/design.svg'
 
 class About extends React.Component {
+
   render() {
     return (
       <Layout>
-        <PageTransition>
           <main className="about-wrapper">
             <Heading text="About me" />
             <div className="about-introduction">
@@ -75,7 +74,6 @@ class About extends React.Component {
               </li>
             </ul>
           </main>
-        </PageTransition>
       </Layout>
     )
   }

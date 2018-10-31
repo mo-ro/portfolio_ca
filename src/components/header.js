@@ -13,7 +13,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log(window.pageYOffset)
     let headerStyle = (window.pageYOffset > 0) ? {
       boxShadow: '0 2px 8px rgba(0, 0, 0, .3)',
       background: 'rgba(255, 255, 255, .9)',
@@ -21,7 +20,6 @@ class Header extends React.Component {
       boxShadow: '0 0 0 rgba(0, 0, 0, .3)',
       background: 'rgba(255, 255, 255, 0)'
     }
-    console.log(headerStyle)
     return (
       <header className="grobal-header" data-hovertype="header" style={headerStyle}>
         <div className="left">

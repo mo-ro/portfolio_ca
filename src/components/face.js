@@ -17,17 +17,19 @@ class Face extends React.Component {
     }
   }
   componentDidMount() {
-    const rightEye = ReactDOM.findDOMNode(this.refs.rightEye).getBoundingClientRect();
-    const leftEye = ReactDOM.findDOMNode(this.refs.leftEye).getBoundingClientRect();
-    const face = ReactDOM.findDOMNode(this.refs.face).getBoundingClientRect();
-    this.setState({
-      rcx: rightEye.x + rightEye.width / 2,
-      rcy: rightEye.y + rightEye.height / 2,
-      lcx: leftEye.x + leftEye.width / 2,
-      lcy: leftEye.y + leftEye.height / 2,
-      faceX: face.x + face.width / 2,
-      faceY: face.y + face.height / 2
-    })
+    setTimeout(() => {
+      const rightEye = ReactDOM.findDOMNode(this.refs.rightEye).getBoundingClientRect();
+      const leftEye = ReactDOM.findDOMNode(this.refs.leftEye).getBoundingClientRect();
+      const face = ReactDOM.findDOMNode(this.refs.face).getBoundingClientRect();
+      this.setState({
+        rcx: rightEye.x + rightEye.width / 2,
+        rcy: rightEye.y + rightEye.height / 2,
+        lcx: leftEye.x + leftEye.width / 2,
+        lcy: leftEye.y + leftEye.height / 2,
+        faceX: face.x + face.width / 2,
+        faceY: face.y + face.height / 2
+      })
+    }, 500);
   }
 
   setRightBrow(distance) {
@@ -63,6 +65,7 @@ class Face extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     let rangle = Math.atan2(this.props.y - this.state.rcy, this.props.x - this.state.rcx);
     let rbcx = this.state.rcx / 6 * Math.cos(rangle);
     let rbcy = this.state.rcy / 60 * Math.sin(rangle);
