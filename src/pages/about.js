@@ -21,21 +21,13 @@ class About extends React.Component {
             <div className="about-introduction">
               <div className="left">
                 <p className="summary" data-hovertype="text">
-                  I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.
+                  I've always sought out the latest web development technologies, and have a passion for development.
                 </p>
                 <p className="text" data-hovertype="text">
-                  I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.I’m a Front-end Developer.
+                  I have over 2 years experience of web development as a front-end developer. I also have skills such as designing and motion graphics, hence I create logos and motion UI.
                 </p>
                 <p className="text" data-hovertype="text">
-                  I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.I’m a Front-end Developer.
-                  I’m a Front-end Developer.I’m a Front-end Developer.
+                  I've been learning, snce I found out "Front-end". At the present time, I'm studying English in Canada so as to learn more about web development at college in Vancouber. I hope I'll find a job as a web developer, and play an active part in the web industry.
                 </p>
               </div>
               <div className="right">

@@ -117,10 +117,10 @@ class IndexPage extends React.Component {
     }
     let mainStyle = this.state.isMain ? {
       opacity: 1,
-      transform: 'translate(0, 0) scale(.95)',
+      transform: 'translate(0, 0) scale(1)',
     } : {
       opacity: 0,
-      transform: 'translate(0, 0px) scale(1)',
+      transform: 'translate(0, 0px) scale(1.05)',
     }
     let circleStyle = {
       transform: `rotate(${circleRate}deg)`,
