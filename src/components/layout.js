@@ -12,7 +12,6 @@ import Header from './header'
 // 		 window.location.reload();
 // 	}
 // };
-window.onunload = function() {};
 
 class Layout extends React.Component {
   constructor() {

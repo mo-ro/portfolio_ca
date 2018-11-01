@@ -3,23 +3,29 @@ import { Link } from 'gatsby'
 
 import Logo from '../images/logo-black.svg'
 
+let headerStyle
+
 class Header extends React.Component {
 
   constructor() {
     super()
     this.state = {
-      isScroll: (window.pageYOffset > 0)
+      isScroll: false
     }
   }
 
+  // componentDidMount() {
+  //   headerStyle = (window.pageYOffset > 0) ? {
+  //     boxShadow: '0 2px 8px rgba(0, 0, 0, .3)',
+  //     background: 'rgba(255, 255, 255, .9)',
+  //   } : {
+  //     boxShadow: '0 0 0 rgba(0, 0, 0, .3)',
+  //     background: 'rgba(255, 255, 255, 0)'
+  //   }
+  // }
+
   render() {
-    let headerStyle = (window.pageYOffset > 0) ? {
-      boxShadow: '0 2px 8px rgba(0, 0, 0, .3)',
-      background: 'rgba(255, 255, 255, .9)',
-    } : {
-      boxShadow: '0 0 0 rgba(0, 0, 0, .3)',
-      background: 'rgba(255, 255, 255, 0)'
-    }
+    
     return (
       <header className="grobal-header" data-hovertype="header" style={headerStyle}>
         <div className="left">

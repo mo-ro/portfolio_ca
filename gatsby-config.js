@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/portfolio_ca",
   siteMetadata: {
     title: 'Gatsby Default Starter',
   },
