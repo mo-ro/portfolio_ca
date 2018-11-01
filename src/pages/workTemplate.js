@@ -23,7 +23,7 @@ class workTemplate extends React.Component {
       <Layout>
         <div className="workshow-wrapper">
           <Heading text="Motion Work"/>
-          <main className="workshow-content">
+          {data && <main className="workshow-content">
             <div className="left">
               {data.images.map((image, key) => {
                 const path = require(`../images/${image}`)
@@ -46,7 +46,7 @@ class workTemplate extends React.Component {
                 <p className="date" data-text="true">{data.created}</p>
               </div>
             </div>
-          </main>
+          </main>}
         </div>
       </Layout>
     )
