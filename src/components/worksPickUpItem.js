@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import ReactDOM from 'react-dom';
 
-
 class worksPickUpItem extends React.Component {
 
   constructor() {

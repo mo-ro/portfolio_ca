@@ -1,7 +1,7 @@
 import React from 'react'
 import LinkButton from './linkButton'
 
-// import WorksPickUpItem from './WorksPickUpItem'
+import WorksPickUpItem from './WorksPickUpItem'
 
 class worksPickUp extends React.Component {
   
@@ -33,8 +33,7 @@ class worksPickUp extends React.Component {
         <ul className="pickup-list">
           {this.props.worksData.works.slice(0, 3).map((work, index) => {
             return (
-              // <WorksPickUpItem work={work} type={this.props.worksData.type} index={index+1} key={index} />
-              <div></div>
+              <WorksPickUpItem work={work} type={this.props.worksData.type} index={index+1} key={index} />
             )
           })}
         </ul>
