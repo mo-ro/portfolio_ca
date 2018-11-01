@@ -1,7 +1,7 @@
 import React from 'react'
 import LinkButton from './linkButton'
 
-import WorksPickUpItem from './WorksPickUpItem'
+import WorksPickUpItem from './worksPickUpItem'
 
 class worksPickUp extends React.Component {
   
