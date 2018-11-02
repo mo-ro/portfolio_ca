@@ -21,7 +21,8 @@ class IndexPage extends React.Component {
       scrollAmount: 0,
       isHero: true,
       isMain: false,
-      mainDisplay: false
+      mainDisplay: false,
+      scrollText: "Scroll softly, please..."
     }
   }
 
@@ -59,10 +60,10 @@ class IndexPage extends React.Component {
   }
 
   closeWheel(event) {
-    console.log(event)
     if(window.pageYOffset === 0 && event.deltaY < 0) {
       this.setState({
-        scrollAmount: 0
+        scrollAmount: 0,
+        scrollText: "Scroll softly, please..."
       })
       setTimeout(() => {
         this.setState({
@@ -78,7 +79,7 @@ class IndexPage extends React.Component {
       }, 400);
     } else if (window.pageYOffset === 0 && event.deltaY > 0) {
       this.setState({
-        scrollAmount: 1
+        scrollAmount: 1,
       })
       setTimeout(() => {
         this.setState({
@@ -92,7 +93,17 @@ class IndexPage extends React.Component {
           isMain: true
         })
       }, 1000);
-      // window.scrollTop = 0
+
+      console.log(event.deltaY)
+      if(event.deltaY < 2 && this.state.scrollAmount === 0) {
+        this.setState({
+          scrollText: "Thanks!"
+        })
+      } else if(this.state.scrollAmount === 0) {
+        this.setState({
+          scrollText: "Wow!"
+        })
+      }
     }
   }
 
@@ -105,7 +116,6 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    console.log('render')
     let circleRate = this.state.scrollAmount * 150
     let heroStyle = this.state.isHero ? {
       transform: 'translate(0, 0) scale(1)',
@@ -165,6 +175,7 @@ class IndexPage extends React.Component {
               </div>
               <div className="scroll-circle">
                 <div className="progress" style={circleStyle}></div>
+                <p className="text" data-hovertype="text">{this.state.scrollText}</p>
               </div>
             </div>
           </div>

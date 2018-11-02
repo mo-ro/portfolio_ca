@@ -65,7 +65,6 @@ class Face extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     let rangle = Math.atan2(this.props.y - this.state.rcy, this.props.x - this.state.rcx);
     let rbcx = this.state.rcx / 6 * Math.cos(rangle);
     let rbcy = this.state.rcy / 60 * Math.sin(rangle);
