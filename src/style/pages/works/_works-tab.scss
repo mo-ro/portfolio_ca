@@ -61,9 +61,11 @@
       height: 40px;
       margin: 0 6px;
     }
-
-    &:hover {
-      background: #ffdde3;
+    
+    @include mq-large {
+      &:hover {
+        background: #ffdde3;
+      }
     }
 
     &.-selected {

@@ -20,9 +20,11 @@
     right: 18px;
   }
   
-  &:hover {
-    > .text {
-      color: $pink;
+  @include mq-large{
+    &:hover {
+      > .text {
+        color: $pink;
+      }
     }
   }
 

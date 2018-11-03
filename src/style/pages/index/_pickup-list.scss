@@ -45,14 +45,12 @@
       transition: .3s;
     }
 
-    &:hover {
-      border-color: $pink;
-
-      &::after {
-        opacity: 1;
-
-        @include mq-medium {
-          display: none;
+    @include mq-large {
+      &:hover {
+        border-color: $pink;
+  
+        &::after {
+          opacity: 1;
         }
       }
     }
@@ -71,8 +69,10 @@
     font-weight: 700;
     transition: color .2s;
 
-    &:hover {
-      color: $pink;
+    @include mq-large {
+      &:hover {
+        color: $pink;
+      }
     }
   }
 

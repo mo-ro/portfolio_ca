@@ -12,3 +12,9 @@ $mq-breakpoint-medium: 960px;
     @content;
   }
 }
+
+@mixin mq-large {
+  @media (min-width: $mq-breakpoint-small) {
+    @content;
+  }
+}

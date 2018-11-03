@@ -21,16 +21,18 @@
     margin-bottom: 20px;
   }
 
-  &:hover {
+  @include mq-large {
+    &:hover {
     
-    > .figure > .image {
-      opacity: .8;
-    }
-
-    > .textarea > .name,
-    > .textarea > .description,
-    > .textarea > .date {
-      color: $white;
+      > .figure > .image {
+        opacity: .8;
+      }
+  
+      > .textarea > .name,
+      > .textarea > .description,
+      > .textarea > .date {
+        color: $white;
+      }
     }
   }
 

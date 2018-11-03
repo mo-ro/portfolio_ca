@@ -19,6 +19,7 @@
 
     @include mq-small {
       flex: 1.618;
+      overflow: hidden;
     }
   }
 
