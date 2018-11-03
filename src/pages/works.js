@@ -48,6 +48,7 @@ class Works extends React.Component {
               </ul>
             </TabPanel>
             <TabPanel className="panel">
+              <UnderLineHeading heading="Motion Graphic"/>
               <ul className="works-list">
                 {this.props.data.motionJson.works.map((work, index) => {
                   return (
@@ -58,6 +59,7 @@ class Works extends React.Component {
               </ul>
             </TabPanel>
             <TabPanel className="panel">
+              <UnderLineHeading heading="Illustration"/>
               <ul className="works-list">
                 {this.props.data.illustJson.works.map((work, index) => {
                   return (
