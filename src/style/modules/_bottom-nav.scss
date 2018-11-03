@@ -23,12 +23,16 @@
     justify-content: center;
     height: 100%;
     width: 80px;
+
+    &[data-active=false] {
+      pointer-events: none;
+    }
   }
 
   > .link > .img {
     margin-bottom: 2px;
     height: 26px;
-    opacity: .5;
+    // opacity: .5;
   }
 
   > .link > .text {

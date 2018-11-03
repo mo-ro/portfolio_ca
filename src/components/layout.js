@@ -22,10 +22,12 @@ class Layout extends React.Component {
       y: 0,
       hovertype: 'default'
     }
+    this.path = null
   }
 
-  componentDidMount(event) {
-    
+  componentWillMount(event) {
+    console.log(this.props.children._owner.key)
+    this.path = this.props.children._owner.key.replace(/\//g, '')
   }
 
   renderPointer(event) {
@@ -159,7 +161,7 @@ class Layout extends React.Component {
                 {this.props.children}
               </div>
               <div className="pointer" style={pointerStyle}></div>
-              <BottomNav />
+              <BottomNav path={this.path} />
             </>
           )
         }}
