@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
 
 import Header from './header'
+import BottomNav from './bottomNav'
 
 // window.onpageshow = function(event) {
 //   console.log('reload')
@@ -158,6 +159,7 @@ class Layout extends React.Component {
                 {this.props.children}
               </div>
               <div className="pointer" style={pointerStyle}></div>
+              <BottomNav />
             </>
           )
         }}
