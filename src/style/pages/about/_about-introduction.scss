@@ -7,6 +7,10 @@
     flex-direction: column-reverse;
   }
 
+  @include mq-small {
+    margin-bottom: 40px;
+  }
+
   > .left {
     line-height: 1.4;
     max-width: 691px;
@@ -17,19 +21,41 @@
       font-size: 3.2rem;
       font-weight: 700;
       margin-bottom: 70px;
+
+      @include mq-small {
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
   }
 
   > .left > .text {
     font-size: 1.8rem;
     margin-bottom: 20px;
+
+    @include mq-small {
+      font-size: 1.6rem;
+    }
   }
 
   > .right {
     margin-left: 117px;
     // padding-top: 60px;
+
+    @include mq-medium {
+      margin-left: 0;
+    }
   }
 
   > .right > .logo {
     width: 300px;
+
+    @include mq-medium {
+      margin-bottom: 40px;
+    }
+
+    @include mq-small {
+      max-width: 300px;
+      width: 100%;
+    }
   }
 }

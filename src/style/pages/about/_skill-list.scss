@@ -1,12 +1,24 @@
 .skill-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include mq-small {
+    justify-content: space-around;
+  }
 
   > .item {
     align-items: center;
     display: flex;
     flex-direction: column;
-     width: 180px;
+    margin: 0 10px 40px;
+    min-width: 180px;
+    width: 180px;
+
+    @include mq-small {
+      // margin: 0 0 30px;
+      width: 80%;
+    }
   }
 
   > .item > .figure {
@@ -14,15 +26,27 @@
     display: flex;
     height: 140px;
     margin-bottom: 30px;
+
+    @include mq-small {
+      height: 170px;
+    }
   }
 
   > .item > .figure > .image {
     width: 130px;
+
+    @include mq-small {
+      width: 140px;
+    }
   }
 
   > .item > .skill {
     font-size: 1.8rem;
     line-height: 1.4;
     text-align: center;
+
+    @include mq-small {
+      font-size: 1.6rem;
+    }
   }
 }
