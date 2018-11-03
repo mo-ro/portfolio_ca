@@ -2,71 +2,88 @@
   "type": "web",
   "works": [
     {
-      "name": "koara",
+      "name": "career",
       "created": "09/09/2018",
       "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
       "tools": [
-        "after effects",
-        "html",
-        "css"
+        "HTML",
+        "CSS",
+        "SCSS",
+        "jQuery",
+        "Gulp"
       ],
-      "url": "https://hogehoge",
+      "url": "https://pages.trunk.fm/career/",
       "images": [
-        "koara.png",
-        "santa.png"
-      ],
-      "github": "https://hogehoge"
-    },
-    
-    {
-      "name": "koara",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
-      "tools": [
-        "after effects",
-        "html",
-        "css"
-      ],
-      "url": "https://hogehoge",
-      "images": [
-        "koara.png",
-        "santa.png"
-      ],
-      "github": "https://hogehoge"
+        "web/career.png",
+        "web/career-whole.png"
+      ]
     },
 
     {
-      "name": "koara",
+      "name": "Dot animation with CSS",
       "created": "09/09/2018",
       "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
       "tools": [
-        "after effects",
-        "html",
-        "css"
+        "HTML",
+        "CSS",
+        "SCSS"
       ],
-      "url": "https://hogehoge",
+      "url": "https://mo-ro.github.io/animation_trainning/css/ff/",
       "images": [
-        "koara.png",
-        "santa.png"
-      ],
-      "github": "https://hogehoge"
+        "web/dot.png",
+        "web/dot-2.png"
+      ]
     },
 
     {
-      "name": "koara",
+      "name": "Train animation with CSS",
       "created": "09/09/2018",
       "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
       "tools": [
-        "after effects",
-        "html",
-        "css"
+        "HTML",
+        "CSS",
+        "SCSS"
       ],
-      "url": "https://hogehoge",
+      "url": "https://mo-ro.github.io/animation_trainning/css/train/",
       "images": [
-        "koara.png",
-        "santa.png"
+        "web/train.png"
+      ]
+    },
+
+    {
+      "name": "Moai 3D animation",
+      "created": "09/09/2018",
+      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "tools": [
+        "HTML",
+        "CSS",
+        "SCSS",
+        "jQuery",
+        "illustrator"
       ],
-      "github": "https://hogehoge"
+      "url": "https://mo-ro.github.io/animation_trainning/cubic/",
+      "images": [
+        "web/moai-cube.png",
+        "web/moai-cube-2.png"
+      ]
+    },
+
+    {
+      "name": "Fire work animation",
+      "created": "09/09/2018",
+      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "tools": [
+        "HTML",
+        "CSS",
+        "SCSS",
+        "jQuery",
+        "illustrator"
+      ],
+      "url": "https://mo-ro.github.io/hanabi/",
+      "images": [
+        "web/hanabi.png",
+        "web/hanabi-2.png"
+      ]
     }
   ]
 }

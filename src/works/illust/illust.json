@@ -11,52 +11,8 @@
         "css"
       ],
       "images": [
-        "koara.png",
-        "santa.png"
-      ]
-    },
-
-    {
-      "name": "motion graphics - 1",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
-      "tools": [
-        "after effects",
-        "html",
-        "css"
-      ],
-      "images": [
-        "career.png"
-      ]
-    },
-
-    {
-      "name": "Santa claus",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
-      "tools": [
-        "after effects",
-        "html",
-        "css"
-      ],
-      "images": [
-        "whale.png",
-        "santa.png"
-      ]
-    },
-
-    {
-      "name": "koara",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
-      "tools": [
-        "after effects",
-        "html",
-        "css"
-      ],
-      "images": [
-        "koara.png",
-        "santa.png"
+        "motion/koara.png",
+        "motion/santa.png"
       ]
     }
   ]
