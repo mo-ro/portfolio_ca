@@ -94,7 +94,6 @@ class IndexPage extends React.Component {
         })
       }, 1000);
 
-      console.log(event.deltaY)
       if(event.deltaY < 2 && this.state.scrollAmount === 0) {
         this.setState({
           scrollText: "Thanks!"
@@ -186,7 +185,10 @@ class IndexPage extends React.Component {
               <img className="logo" src={Fox} alt=""/>
               <div className="right">
                 <div className="text" data-hovertype="text">
-                  text texttext textext text text text ext text text text text text text ext txt text textext text text text text text text text text text tplayext text text text text txt text text text text text text text 
+                  Welcome to my amazing protfolio site!
+                  I hope you guys appreciate my works, and I really want you to enjoy for my site.
+                  <br />
+                  I'm a front-end developer, but there's not only works of web development, also  a lot of sophisticated motion graphics or illustrations.
                 </div>
                 <LinkButton link="/about" text="About me"/>
               </div>

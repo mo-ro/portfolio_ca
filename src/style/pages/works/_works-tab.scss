@@ -22,15 +22,20 @@
 
   > .list > .tab {
     align-items: center;
-    background-color: $white;
+    background: $white;
     border: 2px solid $black;
     cursor: pointer;
     display: flex;
     font-size: 1.8rem;
     font-weight: 700;
     justify-content: center;
+    transition: background .3s;
     height: 50px;
     width: 186px;
+
+    &:hover {
+      background: #ffdde3;
+    }
 
     &.-selected {
       background: $pink;
