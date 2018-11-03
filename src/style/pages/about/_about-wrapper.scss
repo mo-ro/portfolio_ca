@@ -1,3 +1,11 @@
 .about-wrapper {
   padding: 100px 85px;
+
+  @include mq-medium {
+    padding: 140px 30px;
+  }
+
+  @include mq-small {
+    padding: 20px;
+  }
 }

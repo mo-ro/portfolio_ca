@@ -3,6 +3,10 @@
   display: flex;
   margin-bottom: 100px;
 
+  @include mq-medium {
+    flex-direction: column-reverse;
+  }
+
   > .left {
     line-height: 1.4;
     max-width: 691px;

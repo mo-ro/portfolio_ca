@@ -3,12 +3,21 @@
   justify-content: space-between;
   margin-bottom: 60px;
 
+  @include mq-small {
+    flex-direction: column;
+  }
+
   > .item {
     max-width: 388px;
     overflow: hidden;
 
     &:not(:last-child) {
       margin-right: 16px;
+
+      @include mq-small {
+        margin-bottom: 30px;
+        margin-right: 0;
+      }
     }
   }
 
