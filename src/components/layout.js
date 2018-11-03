@@ -2,17 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import {TransitionGroup, CSSTransition} from 'react-transition-group'
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import Header from './header'
 import BottomNav from './bottomNav'
-
-// window.onpageshow = function(event) {
-//   console.log('reload')
-// 	if (event.persisted) {
-// 		 window.location.reload();
-// 	}
-// };
 
 class Layout extends React.Component {
   constructor() {
@@ -158,7 +151,21 @@ class Layout extends React.Component {
               </Helmet>
               <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
               <Header data={data} />
-                {this.props.children}
+                <PageTransition
+                defaultStyle={{
+                  transition: 'all 250ms cubic-bezier(0.47, 0, 0.75, 0.72)',
+                  left: '4px',
+                  opacity: 0,
+                  position: 'absolute',
+                  width: '100%',
+                }}
+                transitionStyles={{
+                  entering: { left: '0%', opacity: 1 },
+                  entered: { left: '0%', opacity: 1 }
+                }}
+                transitionTime={250}>
+                  {this.props.children}
+                </PageTransition>
               </div>
               <div className="pointer" style={pointerStyle}></div>
               <BottomNav path={this.path} />
