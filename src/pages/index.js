@@ -35,7 +35,7 @@ class IndexPage extends React.Component {
       }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
           return 'tab';
       }else{
-          return 'other';
+          return 'pc';
       }
     })();
 
