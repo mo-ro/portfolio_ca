@@ -7,7 +7,7 @@
   display: none;
   height: 44px;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 40px;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -20,7 +20,9 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 30px;
+    justify-content: center;
+    height: 100%;
+    width: 80px;
   }
 
   > .link > .img {
