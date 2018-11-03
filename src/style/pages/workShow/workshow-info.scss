@@ -6,6 +6,11 @@
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 50px;
+
+    @include mq-small {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
   }
 
   > .section {
@@ -13,10 +18,18 @@
 
     > .text {
       font-size: 1.8rem;
+
+      @include mq-small {
+        font-size: 1.6rem;
+      }
     }
   }
 
   > .date {
     font-size: 1.6rem;
+
+    @include mq-small {
+      font-size: 1.4rem;
+    }
   }
 }
