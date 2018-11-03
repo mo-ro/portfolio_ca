@@ -22,8 +22,26 @@ class IndexPage extends React.Component {
       isHero: true,
       isMain: false,
       mainDisplay: false,
-      scrollText: "Scroll softly, please..."
+      scrollText: "Scroll softly, please...",
+      ua: 'pc'
     }
+  }
+
+  componentDidMount() {
+    var getDevice = (function(){
+      var ua = navigator.userAgent;
+      if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
+          return 'sp';
+      }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
+          return 'tab';
+      }else{
+          return 'other';
+      }
+    })();
+
+    this.setState({
+      ua: getDevice
+    })
   }
 
   openWheel(event) {
@@ -144,6 +162,7 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
+      {this.state.ua === 'pc' ?
         <div className="index-wrapper">
           <div className="index-hero" style={heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
@@ -199,16 +218,8 @@ class IndexPage extends React.Component {
             <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
             <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
           </main>
-        </div>
-      </Layout>
-    )
-  }
-}
+        </div> :
 
-class IndexSP extends React.Component {
-  render() {
-    return (
-      <Layout>
         <div className="index-wrapper">
           <div className="index-hero" id="hero">
             <div className="left" data-hovertype="pink">
@@ -244,35 +255,46 @@ class IndexSP extends React.Component {
             <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
             <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
           </main>
-        </div>
+        </div>}
       </Layout>
     )
   }
 }
 
-var getDevice = (function(){
-    var ua = navigator.userAgent;
-    if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
-        return 'sp';
-    }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
-        return 'tab';
-    }else{
-        return 'other';
-    }
-})();
-
-let indexpage = null
-
-if( getDevice == 'sp' ){
-  indexpage = IndexSP
-  
-}else if( getDevice == 'tab' ){
-  indexpage = IndexSP
-}else if( getDevice == 'other' ){
-  indexpage = IndexPage
+class IndexSP extends React.Component {
+  render() {
+    return (
+      <Layout>
+        
+      </Layout>
+    )
+  }
 }
 
-export default indexpage
+// if(typeof window !== 'undefined') {
+//   var getDevice = (function(){
+//       var ua = navigator.userAgent;
+//       if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
+//           return 'sp';
+//       }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
+//           return 'tab';
+//       }else{
+//           return 'other';
+//       }
+//   })();
+
+
+//   if( getDevice == 'sp' ){
+//     indexpage = IndexSP
+    
+//   }else if( getDevice == 'tab' ){
+//     indexpage = IndexSP
+//   }else if( getDevice == 'other' ){
+//     indexpage = IndexPage
+//   }
+// }
+
+export default IndexPage
 
 export const pageQuery = graphql`
   query {
