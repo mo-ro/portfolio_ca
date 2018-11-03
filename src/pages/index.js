@@ -250,9 +250,7 @@ class IndexSP extends React.Component {
   }
 }
 
-const indexpage = (window.innerWidth > 600 ? IndexPage : IndexSP)
-
-export default indexpage
+export default IndexPage
 
 export const pageQuery = graphql`
   query {
