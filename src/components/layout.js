@@ -13,14 +13,19 @@ class Layout extends React.Component {
     this.state = {
       x: 0,
       y: 0,
-      hovertype: 'default'
+      hovertype: 'default',
+      active: null
     }
     this.path = null
   }
 
-  componentWillMount(event) {
+  componentDidMount() {
     console.log(this.props.children._owner.key)
     this.path = this.props.children._owner.key.replace(/\//g, '')
+
+    this.setState({
+      active: this.path
+    })
   }
 
   renderPointer(event) {
@@ -168,7 +173,7 @@ class Layout extends React.Component {
                 </PageTransition>
               </div>
               <div className="pointer" style={pointerStyle}></div>
-              <BottomNav path={this.path} />
+              <BottomNav active={this.state.active} />
             </>
           )
         }}
