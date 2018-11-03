@@ -2,17 +2,69 @@
   "type": "illust",
   "works": [
     {
-      "name": "koara",
+      "name": "Whale",
       "created": "09/09/2018",
       "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
       "tools": [
-        "after effects",
-        "html",
-        "css"
+        "Illustrator"
       ],
       "images": [
-        "motion/koara.png",
-        "motion/santa.png"
+        "illust/whale.png"
+      ]
+    },
+    {
+      "name": "A logo",
+      "created": "09/09/2018",
+      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "tools": [
+        "Illustrator"
+      ],
+      "images": [
+        "illust/a.png"
+      ]
+    },
+    {
+      "name": "Colorful Moai",
+      "created": "09/09/2018",
+      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "tools": [
+        "Illustrator"
+      ],
+      "images": [
+        "illust/moai-color.png"
+      ]
+    },
+    {
+      "name": "Realize logo",
+      "created": "09/09/2018",
+      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "tools": [
+        "Illustrator"
+      ],
+      "images": [
+        "illust/realize.png"
+      ]
+    },
+    {
+      "name": "Kakimoto souteijo logo",
+      "created": "09/09/2018",
+      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "tools": [
+        "Illustrator"
+      ],
+      "images": [
+        "illust/kakimoto.png"
+      ]
+    },
+    {
+      "name": "Daibutsu",
+      "created": "09/09/2018",
+      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "tools": [
+        "Illustrator"
+      ],
+      "images": [
+        "illust/daibutsu.png"
       ]
     }
   ]
