@@ -10,6 +10,10 @@
   left: 50%;
   transform: translateX(-50%);
 
+  @include mq-medium {
+    display: none;
+  }
+
   &::after {
     content: "";
     display: block;

@@ -4,22 +4,35 @@
   position: fixed;
   transition: all .3s cubic-bezier(.14,.44,.5,.96);
   width: 100%;
-  // z-index: 3;
+
+  @include mq-small {
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+    position: relative;
+  }
 
   > .left {
     background: $pink;
     flex: 1;
     position: relative;
+
+    @include mq-small {
+      flex: 1.618;
+    }
   }
 
   > .right {
     align-items: center;
     background: $white;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, .2);
+    // box-shadow: -4px 0 20px rgba(0, 0, 0, .2);
     display: flex;
     flex: 1.618;
     overflow: hidden;
     position: relative;
+
+    @include mq-small {
+      flex: 1;
+    }
   }
 
   > .left > .navigation {

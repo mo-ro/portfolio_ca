@@ -6,6 +6,12 @@
   padding-left: 30px;
   position: relative;
 
+  @include mq-small {
+    font-size: 1.8rem;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+
   &[data-type="sub"] {
     font-size: 1.8rem;
     margin-bottom: 12px;
@@ -22,5 +28,9 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
+
+    @include mq-small {
+      width: 14px;
+    }
   }
 }

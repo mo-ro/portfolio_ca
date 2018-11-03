@@ -1,13 +1,5 @@
-$mq-breakpoint-small: 750px;
-$mq-breakpoint-xsmall: 321px;
-$mq-breakpoint-medium: 1080px;
-
-
-@mixin mq-xsmall {
-  @media (max-width: #{$mq-breakpoint-xsmall - 1}) {
-    @content;
-  }
-}
+$mq-breakpoint-small: 600px;
+$mq-breakpoint-medium: 960px;
 
 @mixin mq-small {
   @media (max-width: #{$mq-breakpoint-small - 1}) {
@@ -17,12 +9,6 @@ $mq-breakpoint-medium: 1080px;
 
 @mixin mq-medium {
   @media (max-width: #{$mq-breakpoint-medium - 1}) {
-    @content;
-  }
-}
-
-@mixin mq-large {
-  @media (min-width: #{$mq-breakpoint-small}) {
     @content;
   }
 }

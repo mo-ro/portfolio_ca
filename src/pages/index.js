@@ -205,7 +205,54 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage
+class IndexSP extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <div className="index-wrapper">
+          <div className="index-hero" id="hero">
+            <div className="left" data-hovertype="pink">
+              <img className="hero-logo" src={Logo} alt=""/>
+              <Face className="hero-face"/>
+            </div>
+            <div className="right">
+              <div className="hero-message">
+                <p className="greeting" data-hovertype="text">Hi, I<span className="span">'</span>m</p>
+                <h1 className="name" data-hovertype="text">Kotaro</h1>
+                <h3 className="job" data-hovertype="text">Front-end Developer</h3>
+              </div>
+            </div>
+          </div>
+
+          <main className="index-main" id="main">
+            <Heading text="Kotaro Morooka"/>
+            <div className="index-about">
+              <img className="logo" src={Fox} alt=""/>
+              <div className="right">
+                <div className="text" data-hovertype="text">
+                  Welcome to my amazing protfolio site!
+                  I hope you guys appreciate my works, and I really want you to enjoy for my site.
+                  <br />
+                  I'm a front-end developer, but there's not only works of web development, also  a lot of sophisticated motion graphics or illustrations.
+                </div>
+                <LinkButton link="/about" text="About me"/>
+              </div>
+            </div>
+
+            <Heading text="My works" />
+            <WorksPickUp worksData={this.props.data.webJson} heading="Web" />
+            <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
+            <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
+          </main>
+        </div>
+      </Layout>
+    )
+  }
+}
+
+const indexpage = (window.innerWidth > 600 ? IndexPage : IndexSP)
+
+export default indexpage
 
 export const pageQuery = graphql`
   query {
