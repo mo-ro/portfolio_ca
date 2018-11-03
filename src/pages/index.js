@@ -145,7 +145,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <div className="index-wrapper">
-          <div className="index-hero" style={heroStyle} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
+          <div className="index-hero" style={heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
               {/* <nav className="navigation">
                 <ul className="headernav-list">
@@ -250,7 +250,29 @@ class IndexSP extends React.Component {
   }
 }
 
-export default IndexPage
+var getDevice = (function(){
+    var ua = navigator.userAgent;
+    if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
+        return 'sp';
+    }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
+        return 'tab';
+    }else{
+        return 'other';
+    }
+})();
+
+let indexpage = null
+
+if( getDevice == 'sp' ){
+  indexpage = IndexSP
+  
+}else if( getDevice == 'tab' ){
+  indexpage = IndexSP
+}else if( getDevice == 'other' ){
+  indexpage = IndexPage
+}
+
+export default indexpage
 
 export const pageQuery = graphql`
   query {
