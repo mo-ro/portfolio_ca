@@ -15,6 +15,10 @@
     @include mq-medium {
       left: -30px;
     }
+
+    @include mq-small {
+      left: -20px;
+    }
   }
 
   > .list {
@@ -25,6 +29,11 @@
 
     @include mq-medium {
       width: 520px;
+    }
+
+    @include mq-small {
+      margin-bottom: 40px;
+      width: 100%;
     }
   }
 
@@ -44,6 +53,13 @@
     @include mq-medium {
       width: 160px;
       height: 44px;
+    }
+
+    @include mq-small {
+      font-size: 1.4rem;
+      text-align: center;
+      height: 40px;
+      margin: 0 6px;
     }
 
     &:hover {
