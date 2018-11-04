@@ -15,11 +15,11 @@
   }
 
   > .left > .img {
-    bottom: -14px;
+    bottom: -6px;
     left: 8px;
     position: absolute;
     transform: scaleX(-1);
-    width: 80px;
+    width: 50px;
     z-index: -1;
 
     @include mq-small {
