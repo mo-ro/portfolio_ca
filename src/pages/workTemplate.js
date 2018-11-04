@@ -20,11 +20,13 @@ class workTemplate extends React.Component {
   }
 
   shuffleWorks(works) {
-    for(let i = works.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1))
-      let tmp = works[i]
-      works[i] = works[j]
-      works[j] = tmp
+    if(works) {
+      for(let i = works.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1))
+        let tmp = works[i]
+        works[i] = works[j]
+        works[j] = tmp
+      }
     }
     return works
   }
