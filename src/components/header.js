@@ -28,24 +28,21 @@ class Header extends React.Component {
     
     return (
       <header className="grobal-header" data-hovertype="header" style={headerStyle}>
-        <div className="left">
+        <div className="left" data-active={this.props.active === '' ? false : true}>
           <Link to="/">
             <img className="logo" src={Logo} alt=""/>
           </Link>
         </div>
         <div className="right">
           <ul className="grobal-header-list">
-            <li className="item">
-              <Link to="about" className="link">About</Link>
+            <li className="item" data-active={this.props.active === '' ? false : true}>
+              <Link to="/" className="link" data-hovertype="header-link">Home</Link>
             </li>
-            <li className="item">
-              <Link to="works" className="link">Works</Link>
+            <li className="item" data-active={this.props.active === 'about' ? false : true}>
+              <Link to="about" className="link" data-hovertype="header-link">About</Link>
             </li>
-            <li className="item">
-              <a href="https://github.com/mo-ro" className="link">GitHub</a>
-            </li>
-            <li className="item">
-              <a href="" className="link">LinkedIn</a>
+            <li className="item" data-active={this.props.active === 'works' ? false : true}>
+              <Link to="works" className="link" data-hovertype="header-link">Works</Link>
             </li>
           </ul>
         </div>

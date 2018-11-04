@@ -80,6 +80,21 @@ class Layout extends React.Component {
         }
       break;
 
+      case 'header-link':
+        pointerStyle = {
+          borderRadius: 0,
+          boxSizing: 'border-box',
+          transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(0deg)`,
+          // background: '#f73859',
+          border: '2px solid #f73859',
+          width: '84px',
+          height: '28px',
+          left: '-42px',
+          top: '-20px',
+          opacity: 1
+        }
+      break;
+
       case 'link':
         pointerStyle = {
           transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
@@ -156,7 +171,7 @@ class Layout extends React.Component {
                 <html lang="en" />
               </Helmet>
               <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
-              <Header data={data} />
+              <Header data={data} active={this.state.active} />
                 <PageTransition
                 defaultStyle={{
                   transition: 'all 250ms cubic-bezier(0.47, 0, 0.75, 0.72)',

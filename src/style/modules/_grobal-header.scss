@@ -25,7 +25,7 @@
   display: flex;
   height: 56px;
   justify-content: space-between;
-  width: 472px;
+  width: 322px;
 
   > .item {
     height: 100%;
@@ -33,14 +33,29 @@
 
     &::after {
       background: $pink;
+      border-radius: 100%;
       content: "";
       display: block;
       width: 10px;
-      height: 2px;
+      height: 10px;
       position: absolute;
       top: 50%;
       left: 0;
       transform: translateY(-50%);
+      transition: height .3s, border-radius .3s;
+    }
+
+    &[data-active=true] {
+      &::after {
+        border-radius: 0;
+        height: 2px;
+      }
+    }
+
+    &[data-active=false] {
+      > .link {
+        pointer-events: none;
+      }
     }
   }
 
@@ -49,5 +64,6 @@
     font-size: 2rem;
     font-weight: 700;
     padding: 18px;
+    position: relative;
   }
 }

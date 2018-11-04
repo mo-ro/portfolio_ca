@@ -10,7 +10,8 @@
   transition: 
     transform 0.15s ease-out,
     border-radius .3s,
-    background .2s;
+    background .2s,
+    width .2s;
   z-index: 100;
 
   @include mq-medium {
