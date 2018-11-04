@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Heading from '../components/heading'
+import WorksItem from '../components/worksItem'
 import  { Link } from 'gatsby'
 
 import '../style/pages/workShow/index.scss'
@@ -18,19 +19,26 @@ class workTemplate extends React.Component {
     return toolsText
   }
 
-  renderWeb() {
-    
+  shuffleWorks(works) {
+    for(let i = works.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1))
+      let tmp = works[i]
+      works[i] = works[j]
+      works[j] = tmp
+    }
+    return works
   }
 
   render() {
     const data = this.props.pageContext.page
     const type = this.props.pageContext.type
+    const otherWorks = this.shuffleWorks(this.props.pageContext.otherWorks)
 
     return (
       <Layout>
-        <div className="workshow-wrapper">
+        {data && <div className="workshow-wrapper">
           <Heading text="Motion Work"/>
-          {data && <main className="workshow-content">
+          <main className="workshow-content">
             <div className="left">
               {data.images.map((image, key) => {
                 const path = require(`../images/${image}`)
@@ -60,8 +68,18 @@ class workTemplate extends React.Component {
                 <p className="date" data-hovertype="text">{data.created}</p>
               </div>
             </div>
-          </main>}
-        </div>
+          </main>
+          <div className="datashow-other">
+            <Heading text="Other works" />
+            <div className="works-list">
+              {otherWorks.slice(0, 3).map((work, index) => {
+                return (
+                  <WorksItem work={work} type={type} index={index+1} key={index} />
+                )
+              })}
+            </div>
+          </div>
+        </div>}
       </Layout>
     )
   }

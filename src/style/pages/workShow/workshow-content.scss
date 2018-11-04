@@ -1,5 +1,6 @@
 .workshow-content {
   display: flex;
+  margin-bottom: 80px;
 
   @include mq-medium {
     align-items: flex-start;

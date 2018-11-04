@@ -80,7 +80,7 @@ class Layout extends React.Component {
         }
       break;
 
-      case 'header-link':
+      case 'global-link':
         pointerStyle = {
           borderRadius: 0,
           boxSizing: 'border-box',

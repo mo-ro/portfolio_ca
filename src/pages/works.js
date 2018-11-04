@@ -44,7 +44,7 @@ class Works extends React.Component {
                     <WorksItem work={work} type={this.props.data.webJson.type} index={index+1} key={index} />
                   )
                 })}
-                <div className=".item.-visible"></div>
+                <div className="item -visible"></div>
               </ul>
             </TabPanel>
             <TabPanel className="panel">
@@ -55,7 +55,7 @@ class Works extends React.Component {
                     <WorksItem work={work} type={this.props.data.motionJson.type} index={index+1} key={index}/>
                   )
                 })}
-                <div className=".item.-visible"></div>
+                <div className="item -visible"></div>
               </ul>
             </TabPanel>
             <TabPanel className="panel">

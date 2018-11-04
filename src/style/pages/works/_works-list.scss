@@ -11,7 +11,21 @@
   }
 
   > .item {
-    width: 287px;
+    width: 23%;
     margin: 0 10px 40px;
+
+    @media (max-width: 1400px) {
+      width: 30%;
+    }
+
+    @include mq-medium {
+      margin: 0 0 40px;
+      width: 47%;
+    }
+  
+    @include mq-small {
+      width: 100%;
+      margin-bottom: 20px;
+    }
   }
 }

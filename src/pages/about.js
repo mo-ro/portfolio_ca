@@ -48,7 +48,7 @@ class About extends React.Component {
                 <figure className="figure">
                   <img className="image" src={frontEnd} alt="" data-hovertype="text"/>
                 </figure>
-                <div className="skill" data-hovertype="text">React / Redux / TypeScript / Vue / Create.js / Webpack </div>
+                <div className="skill" data-hovertype="text">React / Redux / TypeScript / Vue / Gatsby / GraphQL / Webpack </div>
               </li>
               <li className="item">
                 <UnderLineHeading heading="Motion Graphics" />
@@ -62,7 +62,7 @@ class About extends React.Component {
                 <figure className="figure">
                   <img className="image" src={design} alt="" data-hovertype="text"/>
                 </figure>
-                <div className="skill" data-hovertype="text">Illustrator / Sketch / Photoshop / Figma</div>
+                <div className="skill" data-hovertype="text">Illustrator / Sketch / Photoshop / Figma / Adobe XD</div>
               </li>
             </ul>
           </main>

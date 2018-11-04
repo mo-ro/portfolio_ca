@@ -36,13 +36,13 @@ class Header extends React.Component {
         <div className="right">
           <ul className="grobal-header-list">
             <li className="item" data-active={this.props.active === '' ? false : true}>
-              <Link to="/" className="link" data-hovertype="header-link">Home</Link>
+              <Link to="/" className="link" data-hovertype="global-link">Home</Link>
             </li>
             <li className="item" data-active={this.props.active === 'about' ? false : true}>
-              <Link to="about" className="link" data-hovertype="header-link">About</Link>
+              <Link to="about" className="link" data-hovertype="global-link">About</Link>
             </li>
             <li className="item" data-active={this.props.active === 'works' ? false : true}>
-              <Link to="works" className="link" data-hovertype="header-link">Works</Link>
+              <Link to="works" className="link" data-hovertype="global-link">Works</Link>
             </li>
           </ul>
         </div>

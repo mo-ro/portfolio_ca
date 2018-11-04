@@ -11,10 +11,10 @@ class Footer extends React.Component {
           <img className="img" src={moai} alt=""/>
         </div>
         <div className="right">
-          <Link className="link" to="">LinkedIn</Link>
-          <Link className="link" to="">Facebook</Link>
-          <Link className="link" to="">Twitter</Link>
-          <Link className="link" to="">Instagram</Link>
+          <a className="link" href="https://www.linkedin.com/in/kotaro-morooka" target="_blank" rel="noopener norefferer" data-hovertype="global-link">LinkedIn</a>
+          <a className="link" href="https://github.com/mo-ro" target="_blank" rel="noopener norefferer" data-hovertype="global-link">GitHub</a>
+          <a className="link" href="https://www.facebook.com/profile.php?id=100016374344473" target="_blank" rel="noopener norefferer" data-hovertype="global-link">Facebook</a>
+          <a className="link" href="https://twitter.com/alignItems" target="_blank" rel="noopener norefferer" data-hovertype="global-link">Twitter</a>
         </div>
       </footer>
     )
