@@ -1,0 +1,45 @@
+.grobal-footer {
+  border-bottom: 8px solid $pink;
+  box-sizing: border-box;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 85px;
+  position: absolute;
+  width: 100%;
+
+  @include mq-small {
+    border-bottom: 4px solid $pink;
+    margin-bottom: 44px;
+    padding: 0 20px;
+  }
+
+  > .left > .img {
+    bottom: -14px;
+    left: 8px;
+    position: absolute;
+    transform: scaleX(-1);
+    width: 80px;
+    z-index: -1;
+
+    @include mq-small {
+      display: none;
+    }
+  }
+
+  > .right {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+
+    @include mq-small {
+      width: 100%;
+    }
+  }
+
+  > .right > .link {
+    color: $pink;
+    font-size: 1.4rem;
+    line-height: 2;
+  }
+}

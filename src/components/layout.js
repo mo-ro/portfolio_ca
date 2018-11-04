@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 import Header from './header'
+import Footer from './footer'
 import BottomNav from './bottomNav'
 
 class Layout extends React.Component {
@@ -161,6 +162,7 @@ class Layout extends React.Component {
                   transition: 'all 250ms cubic-bezier(0.47, 0, 0.75, 0.72)',
                   left: '4px',
                   opacity: 0,
+                  overflow: 'hidden',
                   position: 'absolute',
                   width: '100%',
                 }}
@@ -170,6 +172,7 @@ class Layout extends React.Component {
                 }}
                 transitionTime={250}>
                   {this.props.children}
+                  <Footer />
                 </PageTransition>
               </div>
               <div className="pointer" style={pointerStyle}></div>

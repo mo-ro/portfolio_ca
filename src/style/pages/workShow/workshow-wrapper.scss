@@ -1,4 +1,5 @@
 .workshow-wrapper {
+  min-height: 110vh;
   padding: 120px 85px;
 
   @include mq-medium {
@@ -6,6 +7,6 @@
   }
 
   @include mq-small {
-    padding: 20px;
+    padding: 40px 20px;
   }
 }

@@ -43,6 +43,7 @@ class workTemplate extends React.Component {
                   <Heading text="Tools" type="sub"/>
                   <p className="text" data-text="true">{this.getTools(data.tools)}</p>
                 </section>
+                <Heading text="Date" type="sub"/>
                 <p className="date" data-text="true">{data.created}</p>
               </div>
             </div>
