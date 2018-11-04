@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Heading from '../components/heading'
+import  { Link } from 'gatsby'
 
 import '../style/pages/workShow/index.scss'
 
@@ -17,8 +18,14 @@ class workTemplate extends React.Component {
     return toolsText
   }
 
+  renderWeb() {
+    
+  }
+
   render() {
-    const data = this.props.pageContext.page;
+    const data = this.props.pageContext.page
+    const type = this.props.pageContext.type
+
     return (
       <Layout>
         <div className="workshow-wrapper">
@@ -43,6 +50,12 @@ class workTemplate extends React.Component {
                   <Heading text="Tools" type="sub"/>
                   <p className="text" data-text="true">{this.getTools(data.tools)}</p>
                 </section>
+                {type === 'web' ? 
+                  <section className="section">
+                    <Heading text="Demonstration" type="sub"/>
+                    <Link className="text -link" to={data.url} data-text="true">{data.url}</Link>
+                  </section>
+                 : null}
                 <Heading text="Date" type="sub"/>
                 <p className="date" data-text="true">{data.created}</p>
               </div>

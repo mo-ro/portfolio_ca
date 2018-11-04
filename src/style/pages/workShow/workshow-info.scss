@@ -22,6 +22,11 @@
       @include mq-small {
         font-size: 1.6rem;
       }
+
+      &.-link {
+        color: $pink;
+        display: block;
+      }
     }
   }
 

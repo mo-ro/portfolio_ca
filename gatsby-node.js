@@ -15,7 +15,8 @@ exports.createPages = ({ boundActionCreators }) => {
       path,
       component: template,
       context: {
-        page
+        page,
+        type: motionData.type
       }
     });
   });
@@ -27,7 +28,8 @@ exports.createPages = ({ boundActionCreators }) => {
       path,
       component: template,
       context: {
-        page
+        page,
+        type: webData.type
       }
     });
   });
@@ -39,7 +41,8 @@ exports.createPages = ({ boundActionCreators }) => {
       path,
       component: template,
       context: {
-        page
+        page,
+        type: illustData.type
       }
     });
   });
