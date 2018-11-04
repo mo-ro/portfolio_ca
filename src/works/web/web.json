@@ -2,9 +2,9 @@
   "type": "web",
   "works": [
     {
-      "name": "career",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "name": "Career consulting LP",
+      "created": "22/07/2018",
+      "description": "I created this page as one sphere of internship. I was not only responsible front end developper, also progect manager.",
       "tools": [
         "HTML",
         "CSS",
@@ -21,8 +21,8 @@
 
     {
       "name": "Dot animation with CSS",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "created": "27/07/2018",
+      "description": "This page is created without JavaScript. That chalacter is also drew by box-shadow property of CSS.",
       "tools": [
         "HTML",
         "CSS",
@@ -37,8 +37,8 @@
 
     {
       "name": "Train animation with CSS",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "created": "06/30/2018",
+      "description": "This page is created without JavaScript. That train is also drew with only HTML & CSS. Shine animation created by a rand method, hance it's generated randomly every time.",
       "tools": [
         "HTML",
         "CSS",
@@ -46,14 +46,15 @@
       ],
       "url": "https://mo-ro.github.io/animation_trainning/css/train/",
       "images": [
-        "web/train.png"
+        "web/train.png",
+        "web/train-2.png"
       ]
     },
 
     {
       "name": "Moai 3D animation",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "created": "19/06/2018",
+      "description": "This animation can discriminant the direction where your cursor comes from. You would enjoy on a PC more than on a smartphone",
       "tools": [
         "HTML",
         "CSS",
@@ -70,8 +71,8 @@
 
     {
       "name": "Fire work animation",
-      "created": "09/09/2018",
-      "description": "koarakoarakoara koara koarakoraaf fdsaif fsdfla",
+      "created": "14/07/2017",
+      "description": "Actually, this is the first work since I started to learning front end. Now I see the source code is terrible.",
       "tools": [
         "HTML",
         "CSS",

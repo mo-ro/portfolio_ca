@@ -35,29 +35,29 @@ class workTemplate extends React.Component {
               {data.images.map((image, key) => {
                 const path = require(`../images/${image}`)
                 return (
-                  <img className="image" data-text="true" src={path} key={key} alt=""/>
+                  <img className="image" data-hovertype="text" src={path} key={key} alt=""/>
                 )
               })}
             </div>
             <div className="right">
               <div className="workshow-info">
-                <h1 className="name" data-text="true">{data.name}</h1>
+                <h1 className="name" data-hovertype="text">{data.name}</h1>
                 <section className="section">
                   <Heading text="Description" type="sub"/>
-                  <p className="text" data-text="true">{data.description}</p>
+                  <p className="text" data-hovertype="text">{data.description}</p>
                 </section>
                 <section className="section">
                   <Heading text="Tools" type="sub"/>
-                  <p className="text" data-text="true">{this.getTools(data.tools)}</p>
+                  <p className="text" data-hovertype="text">{this.getTools(data.tools)}</p>
                 </section>
                 {type === 'web' ? 
                   <section className="section">
                     <Heading text="Demonstration" type="sub"/>
-                    <Link className="text -link" to={data.url} data-text="true">{data.url}</Link>
+                    <Link className="text -link" to={data.url} data-hovertype="text">{data.url}</Link>
                   </section>
                  : null}
                 <Heading text="Date" type="sub"/>
-                <p className="date" data-text="true">{data.created}</p>
+                <p className="date" data-hovertype="text">{data.created}</p>
               </div>
             </div>
           </main>}

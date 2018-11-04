@@ -162,7 +162,7 @@ class Layout extends React.Component {
                   transition: 'all 250ms cubic-bezier(0.47, 0, 0.75, 0.72)',
                   left: '4px',
                   opacity: 0,
-                  overflow: 'hidden',
+                  // overflow: 'hidden',
                   position: 'absolute',
                   width: '100%',
                 }}
