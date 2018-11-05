@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from '../components/layout'
 import Heading from '../components/heading'
 import WorksItem from '../components/worksItem'
-import  { Link } from 'gatsby'
 
 import '../style/pages/workShow/index.scss'
 
@@ -63,7 +62,7 @@ class workTemplate extends React.Component {
                 {type === 'web' ? 
                   <section className="section">
                     <Heading text="Demonstration" type="sub"/>
-                    <Link className="text -link" to={data.url} data-hovertype="text">{data.url}</Link>
+                    <a className="text -link" href={data.url} data-hovertype="text" target="_blank" rel="noopener noreferrer">{data.url}</a>
                   </section>
                  : null}
                 <Heading text="Date" type="sub"/>
@@ -74,7 +73,7 @@ class workTemplate extends React.Component {
           <div className="datashow-other">
             <Heading text="Other works" />
             <div className="works-list">
-              {otherWorks.slice(0, 3).map((work, index) => {
+              {otherWorks.slice(0, 4).map((work, index) => {
                 return (
                   <WorksItem work={work} type={type} index={index+1} key={index} />
                 )
