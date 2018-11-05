@@ -83,7 +83,7 @@ class About extends React.Component {
                   </div>
                   <div className="line">
                     <div className="left">Birthday</div>
-                    <div className="right">01 / 09 / 1997</div>
+                    <div className="right">Sep 01, 1997</div>
                   </div>
                   <div className="line">
                     <div className="left">Nationality</div>
