@@ -166,6 +166,7 @@ class Layout extends React.Component {
           return(
             <>
               <Helmet
+                prefix="og: http://ogp.me/ns#"
                 title={data.site.siteMetadata.title}
                 meta={[
                   { name: 'description', content: data.site.siteMetadata.description },
