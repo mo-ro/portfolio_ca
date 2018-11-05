@@ -152,12 +152,17 @@ class Layout extends React.Component {
           query SiteTitleQuery {
             site {
               siteMetadata {
-                title
+                title,
+                name,
+                description,
+                url,
+                image
               }
             }
           }
         `}
         render={data => {
+          console.log(data.site.siteMetadata, 9876543)
           return(
             <>
               <Helmet
