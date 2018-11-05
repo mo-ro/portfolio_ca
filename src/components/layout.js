@@ -21,7 +21,6 @@ class Layout extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.children._owner.key)
     this.path = this.props.children._owner.key.replace(/\//g, '')
 
     this.setState({

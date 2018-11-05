@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import Heading from '../components/heading'
@@ -8,9 +7,9 @@ import WorksPickUp from '../components/worksPickUp'
 
 import '../style/pages/index/index.scss'
 
-import Face from '../components/face';
-import Logo from '../images/logo.svg';
-import Fox from '../images/fox-logo.svg';
+import Face from '../components/face'
+import Logo from '../images/logo.svg'
+import Fox from '../images/fox-logo.svg'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -30,7 +29,7 @@ class IndexPage extends React.Component {
   componentDidMount() {
     var getDevice = (function(){
       var ua = navigator.userAgent;
-      if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
+      if((ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0){
           return 'sp';
       }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
           return 'tab';
@@ -42,39 +41,6 @@ class IndexPage extends React.Component {
     this.setState({
       ua: getDevice
     })
-  }
-
-  openWheel(event) {
-    event.persist()
-    // console.log(event.deltaY)
-      // if(event.deltaY > 0 && event.deltaY > this.state.scrollAmount) {
-      //   let delta
-      //   if(event.deltaY >= 1) {
-      //     delta = 1
-      //   } else {
-      //     delta = event.deltaY
-      //   }
-        // this.setState({
-        //   scrollAmount: 1
-        // })
-      // }
-
-    // if(event.deltaY > 0) {
-    //   setTimeout(() => {
-    //     this.setState({
-    //       isHero: false,
-    //       mainDisplay: true
-    //     })
-    //   }, 800);
-      
-    //   setTimeout(() => {
-    //     this.setState({
-    //       isMain: true
-    //     })
-    //   }, 1000);
-    //   // window.scrollTop = 0
-    // }
-    // console.log(this.state)
   }
 
   closeWheel(event) {
@@ -260,39 +226,6 @@ class IndexPage extends React.Component {
     )
   }
 }
-
-class IndexSP extends React.Component {
-  render() {
-    return (
-      <Layout>
-        
-      </Layout>
-    )
-  }
-}
-
-// if(typeof window !== 'undefined') {
-//   var getDevice = (function(){
-//       var ua = navigator.userAgent;
-//       if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0){
-//           return 'sp';
-//       }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
-//           return 'tab';
-//       }else{
-//           return 'other';
-//       }
-//   })();
-
-
-//   if( getDevice == 'sp' ){
-//     indexpage = IndexSP
-    
-//   }else if( getDevice == 'tab' ){
-//     indexpage = IndexSP
-//   }else if( getDevice == 'other' ){
-//     indexpage = IndexPage
-//   }
-// }
 
 export default IndexPage
 

@@ -9,18 +9,15 @@ class worksPickUp extends React.Component {
     switch (this.props.worksData.type) {
       case 'web':
         return 0
-        break;
 
       case 'motion':
         return 1
-        break;
 
       case 'illust':
         return 2
-        break;
     
       default:
-        break;
+      break;
     }
   }
 

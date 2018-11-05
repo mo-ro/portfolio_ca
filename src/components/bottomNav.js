@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import homeImg from '../images/home.svg'
-import aboutImg from '../images/about.svg'
-import worksImg from '../images/works.svg'
-
 class BottomNav extends React.Component {
   render() {
     return (

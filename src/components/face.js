@@ -61,7 +61,7 @@ class Face extends React.Component {
   }
 
   handleClick(event) {
-    console.log(event)
+    
   }
 
   render() {

@@ -1,6 +1,5 @@
 import React from 'react'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { Link } from 'gatsby'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import Layout from '../components/layout'
 import Heading from '../components/heading'
@@ -15,13 +14,6 @@ class Works extends React.Component {
     this.state = {
       tabIndex: this.props.location.state ? this.props.location.state.index : 0
     }
-    console.log(this.state)
-  }
-
-  changeIndex(index) {
-    // this.setState({
-    //   tabIndex: index
-    // })
   }
 
   render() {
@@ -33,7 +25,7 @@ class Works extends React.Component {
             <TabList className="list">
               <Tab className="tab">Web</Tab>
               <Tab className="tab">Motion Graphic</Tab>
-              <Tab className="tab">Illust</Tab>
+              <Tab className="tab">Illustration</Tab>
             </TabList>
         
             <TabPanel className="panel">
