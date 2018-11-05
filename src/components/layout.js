@@ -162,7 +162,6 @@ class Layout extends React.Component {
           }
         `}
         render={data => {
-          console.log(data.site.siteMetadata, 9876543)
           return(
             <>
               <Helmet
