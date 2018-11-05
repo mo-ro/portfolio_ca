@@ -16,6 +16,10 @@
     font-size: 1.8rem;
     margin-bottom: 12px;
     padding-left: 28px;
+
+    @include mq-small {
+      padding-left: 20px;
+    }
   }
 
   &::after {

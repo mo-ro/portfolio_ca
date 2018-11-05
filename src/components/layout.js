@@ -164,8 +164,15 @@ class Layout extends React.Component {
               <Helmet
                 title={data.site.siteMetadata.title}
                 meta={[
-                  { name: 'description', content: 'Sample' },
-                  { name: 'keywords', content: 'sample, something' },
+                  { name: 'description', content: data.site.siteMetadata.description },
+                  { property: 'og:title', content: data.site.siteMetadata.title },
+                  { property: 'og:type', content: 'website' },
+                  { property: 'og:url', content: data.site.siteMetadata.url },
+                  { property: 'og:image', content: data.site.siteMetadata.image },
+                  { property: 'og:description', content: data.site.siteMetadata.description },
+                  {property: "og:site_name", content: data.site.siteMetadata.name},
+                  { name: 'twitter:card', content: 'summary_large_image' },
+                  { name: 'twitter:site', content: '@alignItems' }
                 ]}
               >
                 <html lang="en" />
