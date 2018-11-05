@@ -18,9 +18,10 @@ class workTemplate extends React.Component {
     return toolsText
   }
 
-  shuffleWorks(works, currentWork) {
+  shuffleWorks(works, data) {
     let worksWithIndex = []
     if(works) {
+      let currentWork = data.name
       for(let i = 0; i < works.length; i++) {
         if(currentWork === works[i].name) {
           continue
@@ -43,7 +44,7 @@ class workTemplate extends React.Component {
   render() {
     const data = this.props.pageContext.page
     const type = this.props.pageContext.type
-    const otherWorks = this.shuffleWorks(this.props.pageContext.otherWorks, data.name)
+    const otherWorks = this.shuffleWorks(this.props.pageContext.otherWorks, data)
     return (
       <Layout>
         {data && <div className="workshow-wrapper">
