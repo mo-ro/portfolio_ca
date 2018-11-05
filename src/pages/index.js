@@ -133,22 +133,6 @@ class IndexPage extends React.Component {
         <div className="index-wrapper">
           <div className="index-hero" style={heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
-              {/* <nav className="navigation">
-                <ul className="headernav-list">
-                  <li className="item">
-                    <Link className="link" to="" data-hovertype="text">About</Link>
-                  </li>
-                  <li className="item">
-                    <Link className="link" to="" data-hovertype="text">Works</Link>
-                  </li>
-                  <li className="item">
-                    <a className="link" href="https://github.com/mo-ro" data-hovertype="text">GitHub</a>
-                  </li>
-                  <li className="item">
-                    <a className="link" href="" data-hovertype="text">LinkedIn</a>
-                  </li>
-                </ul>
-              </nav> */}
               <img className="hero-logo" src={Logo} alt=""/>
               <Face className="hero-face" x={this.state.x} y={this.state.y}/>
             </div>
@@ -191,7 +175,7 @@ class IndexPage extends React.Component {
           <div className="index-hero" id="hero">
             <div className="left" data-hovertype="pink">
               <img className="hero-logo" src={Logo} alt=""/>
-              <Face className="hero-face"/>
+              <Face className="hero-face" x={this.state.x} y={this.state.y}/>
             </div>
             <div className="right">
               <div className="hero-message">

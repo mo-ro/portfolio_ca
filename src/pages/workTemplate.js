@@ -70,7 +70,7 @@ class workTemplate extends React.Component {
                 </section>
                 {type === 'web' ? 
                   <section className="section">
-                    <Heading text="Demonstration" type="sub"/>
+                    <Heading text="Preview" type="sub"/>
                     <a className="text -link" href={data.url} data-hovertype="text" target="_blank" rel="noopener noreferrer">{data.url}</a>
                   </section>
                  : null}

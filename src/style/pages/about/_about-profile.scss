@@ -1,6 +1,7 @@
 .about-profile {
   display: flex;
   justify-content: space-between;
+  max-width: 1000px;
 
   @include mq-medium {
     align-items: center;
@@ -17,5 +18,9 @@
     @include mq-small {
       display: none;
     }
+  }
+
+  > .right {
+    margin-left: 30px;
   }
 }

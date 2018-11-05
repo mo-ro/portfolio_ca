@@ -3,7 +3,7 @@
   "works": [
     {
       "name": "Career consulting LP",
-      "created": "22/07/2018",
+      "created": "July 22, 2018",
       "description": "I created this page as one sphere of internship. I was not only responsible front end developper, also progect manager.",
       "tools": [
         "HTML",
@@ -21,7 +21,7 @@
 
     {
       "name": "Dot animation with CSS",
-      "created": "27/07/2018",
+      "created": "July 27, 2018",
       "description": "This page is created without JavaScript. That chalacter is also drew by box-shadow property of CSS.",
       "tools": [
         "HTML",
@@ -37,7 +37,7 @@
 
     {
       "name": "Train animation with CSS",
-      "created": "06/30/2018",
+      "created": "June 30, 2018",
       "description": "This page is created without JavaScript. That train is also drew with only HTML & CSS.",
       "tools": [
         "HTML",
@@ -53,7 +53,7 @@
 
     {
       "name": "Moai 3D animation",
-      "created": "19/06/2018",
+      "created": "June 19, 2018",
       "description": "This animation can discriminant the direction where your cursor comes from. You would enjoy on a PC more than on a smartphone",
       "tools": [
         "HTML",
@@ -71,7 +71,7 @@
 
     {
       "name": "Fire work animation",
-      "created": "14/07/2017",
+      "created": "July 14, 2017",
       "description": "Actually, this is the first work since I started to learning front end. Now I see the source code is terrible.",
       "tools": [
         "HTML",
