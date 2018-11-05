@@ -157,8 +157,7 @@ class Layout extends React.Component {
                 title,
                 name,
                 description,
-                url,
-                image
+                url
               }
             }
           }
