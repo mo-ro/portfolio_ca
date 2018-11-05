@@ -5,7 +5,7 @@ import moai from '../images/moai.svg'
 class Footer extends React.Component {
   render() {
     return (
-      <footer className="grobal-footer">
+      <footer className="global-footer">
         <div className="left">
           <img className="img" src={moai} alt=""/>
         </div>
