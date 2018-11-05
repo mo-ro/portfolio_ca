@@ -20,18 +20,21 @@
     },
 
     {
-      "name": "Dot animation with CSS",
-      "created": "July 27, 2018",
-      "description": "This page is created without JavaScript. That chalacter is also drew by box-shadow property of CSS.",
+      "name": "Buzz Spreader / Customize report",
+      "created": "Mar 20, 2018",
+      "description": "I created this service as one sphere of internship. This is the first time to use React. I also designed flame, icon and UI as.",
       "tools": [
-        "HTML",
         "CSS",
-        "SCSS"
+        "SCSS",
+        "React",
+        "Illustrator",
+        "Sketch"
       ],
-      "url": "https://mo-ro.github.io/animation_trainning/css/ff/",
+      "url": "https://www.hottolink.co.jp/hb/lp/buzzspreader/",
       "images": [
-        "web/dot.png",
-        "web/dot-2.png"
+        "web/bzsp-1.png",
+        "web/bzsp-2.png",
+        "web/bzsp-3.png"
       ]
     },
 
@@ -48,6 +51,22 @@
       "images": [
         "web/train.png",
         "web/train-2.png"
+      ]
+    },
+
+    {
+      "name": "Dot animation with CSS",
+      "created": "July 27, 2018",
+      "description": "This page is created without JavaScript. That chalacter is also drew by box-shadow property of CSS.",
+      "tools": [
+        "HTML",
+        "CSS",
+        "SCSS"
+      ],
+      "url": "https://mo-ro.github.io/animation_trainning/css/ff/",
+      "images": [
+        "web/dot.png",
+        "web/dot-2.png"
       ]
     },
 
