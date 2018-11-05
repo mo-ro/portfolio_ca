@@ -172,7 +172,7 @@ class Layout extends React.Component {
                   { property: 'og:title', content: data.site.siteMetadata.title },
                   { property: 'og:type', content: 'website' },
                   { property: 'og:url', content: data.site.siteMetadata.url },
-                  { property: 'og:image', content: ogpImage },
+                  { property: 'og:image', content: 'https://raw.githubusercontent.com/mo-ro/portfolio_ca/master/src/images/ogp.png' },
                   { property: 'og:description', content: data.site.siteMetadata.description },
                   {property: "og:site_name", content: data.site.siteMetadata.name},
                   { name: 'twitter:card', content: 'summary_large_image' },
