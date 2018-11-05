@@ -10,6 +10,7 @@ import coding from '../images/coding.svg'
 import frontEnd from '../images/front-end.svg'
 import motion from '../images/motion-graphics.svg'
 import design from '../images/design.svg'
+import profileImg from '../images/profile.png'
 
 class About extends React.Component {
 
@@ -65,6 +66,40 @@ class About extends React.Component {
                 <div className="skill" data-hovertype="text">Illustrator / Sketch / Photoshop / Figma / Adobe XD</div>
               </li>
             </ul>
+            <Heading text="Profile"/>
+            <div className="about-profile">
+              <div className="left">
+                <img className="img" src={profileImg} alt=""/>
+              </div>
+              <div className="right">
+                <div className="profile-table">
+                  <div className="line">
+                    <div className="left">Name</div>
+                    <div className="right">Kotaro Moaooka</div>
+                  </div>
+                  <div className="line">
+                    <div className="left">Gender</div>
+                    <div className="right">Male</div>
+                  </div>
+                  <div className="line">
+                    <div className="left">Birthday</div>
+                    <div className="right">01 / 09 / 1997</div>
+                  </div>
+                  <div className="line">
+                    <div className="left">Nationality</div>
+                    <div className="right">Japan</div>
+                  </div>
+                  <div className="line">
+                    <div className="left">Hobbie</div>
+                    <div className="right">Dancing / Programming</div>
+                  </div>
+                  <div className="line">
+                    <div className="left">Contact</div>
+                    <div className="right">gainmoro@gmail.com</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
       </Layout>
     )

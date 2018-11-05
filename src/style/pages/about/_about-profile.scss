@@ -1,0 +1,21 @@
+.about-profile {
+  display: flex;
+  justify-content: space-between;
+
+  @include mq-medium {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  > .left > .img {
+    width: 240px;
+
+    @include mq-medium {
+      margin-bottom: 80px;
+    }
+
+    @include mq-small {
+      display: none;
+    }
+  }
+}
