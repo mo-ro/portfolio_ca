@@ -18,27 +18,36 @@ class workTemplate extends React.Component {
     return toolsText
   }
 
-  shuffleWorks(works) {
+  shuffleWorks(works, currentWork) {
+    let worksWithIndex = []
     if(works) {
-      for(let i = works.length - 1; i > 0; i--) {
+      for(let i = 0; i < works.length; i++) {
+        if(currentWork === works[i].name) {
+          continue
+        }
+        let obj = {}
+        obj.work = works[i];
+        obj.index = i;
+        worksWithIndex.push(obj)
+      }
+      for(let i = worksWithIndex.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1))
-        let tmp = works[i]
-        works[i] = works[j]
-        works[j] = tmp
+        let tmp = worksWithIndex[i]
+        worksWithIndex[i] = worksWithIndex[j]
+        worksWithIndex[j] = tmp
       }
     }
-    return works
+    return worksWithIndex
   }
 
   render() {
     const data = this.props.pageContext.page
     const type = this.props.pageContext.type
-    const otherWorks = this.shuffleWorks(this.props.pageContext.otherWorks)
-
+    const otherWorks = this.shuffleWorks(this.props.pageContext.otherWorks, data.name)
     return (
       <Layout>
         {data && <div className="workshow-wrapper">
-          <Heading text="Motion Work"/>
+          <Heading text="Work detail"/>
           <main className="workshow-content">
             <div className="left">
               {data.images.map((image, key) => {
@@ -73,9 +82,9 @@ class workTemplate extends React.Component {
           <div className="datashow-other">
             <Heading text="Other works" />
             <div className="works-list">
-              {otherWorks.slice(0, 4).map((work, index) => {
+              {otherWorks.slice(0, 4).map((workObj, index) => {
                 return (
-                  <WorksItem work={work} type={type} index={index+1} key={index} />
+                  <WorksItem work={workObj.work} type={type} index={workObj.index+1} key={index} />
                 )
               })}
             </div>

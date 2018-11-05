@@ -38,7 +38,7 @@
     {
       "name": "Train animation with CSS",
       "created": "06/30/2018",
-      "description": "This page is created without JavaScript. That train is also drew with only HTML & CSS. Shine animation created by a rand method, hance it's generated randomly every time.",
+      "description": "This page is created without JavaScript. That train is also drew with only HTML & CSS.",
       "tools": [
         "HTML",
         "CSS",

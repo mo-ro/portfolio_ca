@@ -67,6 +67,7 @@
   > .item > .name {
     font-size: 1.8rem;
     font-weight: 700;
+    line-height: 1.2;
     transition: color .2s;
 
     @include mq-large {
