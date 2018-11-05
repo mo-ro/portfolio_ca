@@ -4,8 +4,7 @@ module.exports = {
     title: 'Kotaro | Portfolio',
     name: "Kotaro's portfolio / Front-End Developer",
     description: "Hi! I'm Kotaro Front-end developer. If you are free now, check this out!",
-    url: 'https://morotee.com',
-    image: './src/images/ogp.png',
+    url: 'https://morotee.com'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

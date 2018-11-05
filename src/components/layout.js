@@ -8,6 +8,8 @@ import Header from './header'
 import Footer from './footer'
 import BottomNav from './bottomNav'
 
+import ogpImage from '../images/ogp.png'
+
 class Layout extends React.Component {
   constructor() {
     super();
@@ -171,7 +173,7 @@ class Layout extends React.Component {
                   { property: 'og:title', content: data.site.siteMetadata.title },
                   { property: 'og:type', content: 'website' },
                   { property: 'og:url', content: data.site.siteMetadata.url },
-                  { property: 'og:image', content: data.site.siteMetadata.image },
+                  { property: 'og:image', content: ogpImage },
                   { property: 'og:description', content: data.site.siteMetadata.description },
                   {property: "og:site_name", content: data.site.siteMetadata.name},
                   { name: 'twitter:card', content: 'summary_large_image' },
