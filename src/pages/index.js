@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
       isMain: false,
       mainDisplay: false,
       scrollText: "Scroll softly, please...",
-      ua: 'pc'
+      ua: 'touch'
     }
   }
 
@@ -31,9 +31,9 @@ class IndexPage extends React.Component {
     var getDevice = (function(){
       var ua = navigator.userAgent;
       if((ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0){
-          return 'sp';
+          return 'touch';
       }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
-          return 'tab';
+          return 'touch';
       }else{
           return 'pc';
       }
@@ -134,7 +134,7 @@ class IndexPage extends React.Component {
           <div className="index-hero" style={heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
               <img className="hero-logo" src={Logo} alt=""/>
-              <Face className="hero-face" x={this.state.x} y={this.state.y}/>
+              <Face className="hero-face" x={this.state.x} y={this.state.y} ua={this.state.ua}/>
             </div>
             <div className="right">
               <div className="hero-message">
@@ -172,10 +172,10 @@ class IndexPage extends React.Component {
         </div> :
 
         <div className="index-wrapper">
-          <div className="index-hero" id="hero">
+          <div className="index-hero" id="hero" onClick={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
               <img className="hero-logo" src={Logo} alt=""/>
-              <Face className="hero-face"/>
+              <Face className="hero-face" x={this.state.x} y={this.state.y} ua={this.state.ua}/>
             </div>
             <div className="right">
               <div className="hero-message">

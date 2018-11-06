@@ -47,7 +47,7 @@ class Layout extends React.Component {
             opacity: .3
           }
         })
-        break;
+        break
 
       case 'pink':
         this.setState({
@@ -57,7 +57,7 @@ class Layout extends React.Component {
             opacity: 1
           }
         })
-      break;
+      break
 
       case 'header':
         this.setState({
@@ -67,7 +67,7 @@ class Layout extends React.Component {
             opacity: 1
           }
         })
-      break;
+      break
 
       case 'global-link':
         this.setState({
@@ -84,7 +84,7 @@ class Layout extends React.Component {
             opacity: 1
           }
         })
-      break;
+      break
 
       case 'link':
         this.setState({
@@ -99,7 +99,7 @@ class Layout extends React.Component {
             opacity: 1,
           }
         })
-      break;
+      break
 
       case 'link-white':
         this.setState({
@@ -114,7 +114,7 @@ class Layout extends React.Component {
             opacity: 1,
           }
         })
-      break;
+      break
 
       case 'default':
         this.setState({
@@ -125,7 +125,7 @@ class Layout extends React.Component {
           }
         })
 
-      break;
+      break
     
       default:
         this.setState({
@@ -135,7 +135,7 @@ class Layout extends React.Component {
             opacity: 1
           }
         })
-      break;
+      break
     }
   }
 
@@ -189,7 +189,6 @@ class Layout extends React.Component {
                   transition: 'all 250ms cubic-bezier(0.47, 0, 0.75, 0.72)',
                   left: '4px',
                   opacity: 0,
-                  // overflow: 'hidden',
                   position: 'absolute',
                   width: '100%',
                 }}
