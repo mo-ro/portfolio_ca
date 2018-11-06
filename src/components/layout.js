@@ -182,7 +182,7 @@ class Layout extends React.Component {
               >
                 <html lang="en" />
               </Helmet>
-              <div className="grobal-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
+              <div className="global-container" onMouseMove={this.renderPointer.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onMouseUp={this.onMouseUp.bind(this)}>
               <Header data={data} active={this.state.active} />
                 <PageTransition
                 defaultStyle={{

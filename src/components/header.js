@@ -27,14 +27,14 @@ class Header extends React.Component {
   render() {
     
     return (
-      <header className="grobal-header" data-hovertype="header" style={headerStyle}>
+      <header className="global-header" data-hovertype="header" style={headerStyle}>
         <div className="left" data-active={this.props.active === '' ? false : true}>
           <Link to="/">
             <img className="logo" src={Logo} alt=""/>
           </Link>
         </div>
         <div className="right">
-          <ul className="grobal-header-list">
+          <ul className="global-header-list">
             <li className="item" data-active={this.props.active === '' ? false : true}>
               <Link to="/" className="link" data-hovertype="global-link">Home</Link>
             </li>
