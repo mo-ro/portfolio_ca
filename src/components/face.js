@@ -12,62 +12,60 @@ class Face extends React.Component {
     this.state = {
       rightEyeStyle: {
         transform: null,
-        transition: 0
+        transition: null
       },
+
       leftEyeStyle: {
         transform: null,
         transition: null
+      },
+
+      faceState: {
+        rcx: null,
+        rcy: null,
+        lcx: null,
+        lcy: null,
+        faceX: null,
+        faceY: null
       }
     }
-    this.rcx = null
-    this.rcy = null
-    this.lcx = null
-    this.lcy = null
-    this.faceX = null
-    this.faceY = null
   }
+
   componentDidMount() {
     setTimeout(() => {
       const rightEye = ReactDOM.findDOMNode(this.refs.rightEye).getBoundingClientRect();
       const leftEye = ReactDOM.findDOMNode(this.refs.leftEye).getBoundingClientRect();
       const face = ReactDOM.findDOMNode(this.refs.face).getBoundingClientRect();
-      this.rcx = rightEye.x + rightEye.width / 2
-      this.rcy = rightEye.y + rightEye.height / 2
-      this.lcx = leftEye.x + leftEye.width / 2
-      this.lcy = leftEye.y + leftEye.height / 2
-      this.faceX = face.x + face.width / 2
-      this.faceY = face.y + face.height / 2
+      this.setState({
+        rcx: rightEye.x + rightEye.width / 2,
+        rcy: rightEye.y + rightEye.height / 2,
+        lcx: leftEye.x + leftEye.width / 2,
+        lcy: leftEye.y + leftEye.height / 2,
+        faceX: face.x + face.width / 2,
+        faceY: face.y + face.height / 2
+      })
     }, 500);
-
-    if(this.props.ua === 'touch') {
-      // this.rightEyeStyle[transition] = '.2s'
-      // this.leftEyeStyle.transition = '.2s'
-    }
   }
+  
+  static getDerivedStateFromProps(props, state) {
+    let rangle = Math.atan2(props.y - state.rcy, props.x - state.rcx);
+    let langle = Math.atan2(props.y - state.lcy, props.x - state.lcx);
 
-  componentWillReceiveProps() {
-    let rangle = Math.atan2(this.props.y - this.rcy, this.props.x - this.rcx);
-    let langle = Math.atan2(this.props.y - this.lcy, this.props.x - this.lcx);
-    
-    let rbcx = this.rcx / 6 * Math.cos(rangle)
-    let rbcy = this.rcy / 60 * Math.sin(rangle)
-    let lbcx = this.lcx / 8 * Math.cos(langle)
-    let lbcy = this.lcy / 60 * Math.sin(langle)
+    let rbcx = state.rcx / 6 * Math.cos(rangle)
+    let rbcy = state.rcy / 60 * Math.sin(rangle)
+    let lbcx = state.lcx / 8 * Math.cos(langle)
+    let lbcy = state.lcy / 60 * Math.sin(langle)
 
-    this.setState(prevState => ({
+    return {
       rightEyeStyle: {
-        ...prevState.rightEyeStyle,
-        transform: `translate(${rbcx}px, ${rbcy}px)`
+        transform: `translate(${rbcx}px, ${rbcy}px)`,
+        transition: (props.ua === 'touch' ? '0.2s' : null)
       },
       leftEyeStyle: {
-        ...prevState.leftEyeStyle,
-        transform: `translate(${lbcx}px, ${lbcy}px)`
+        transform: `translate(${lbcx}px, ${lbcy}px)`,
+        transition: (props.ua === 'touch' ? '0.2s' : null)
       }
-    }))
-
-    console.log(this.state.rightEyeStyle.transition)
-
-    // this.rightEyeStyle.transform = `translate(${this.state.rbcx}px, ${this.state.rbcy}px)`
+    }
   }
 
   setRightBrow(distance) {
@@ -110,18 +108,19 @@ class Face extends React.Component {
     let eyeBrowLeftStyle = this.setLeftBrow(distance)
     let faceStyle
 
+    // console.log(this.props)
+
     return (
-      <svg className={this.props.className} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink'
-viewBox='0 0 827 1216' style={faceStyle} onClick={this.handleClick.bind(this)}>
-          <image width='827' height='1216' id='Hige' ref="face" xlinkHref={Bg}
-          overflow='visible' />
-          <image width='137' height='56' id='Eye-l' xlinkHref={Eye}
-          transform='translate(491 628)' overflow='visible' />
-          <image width='228' height='18' id='Mouse' xlinkHref={Mouse}
-          transform='translate(290 994)' overflow='visible' />
-          <image width='137' height='56' id='Eye-l_1_' xlinkHref={Eye}
-          transform='scale(-1 1) rotate(-1.81 19632.602 11188.444)' overflow='visible'
-          />
+      <svg className={this.props.className} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' viewBox='0 0 827 1216' style={faceStyle} onClick={this.handleClick.bind(this)}>
+        <image width='827' height='1216' id='Hige' ref="face" xlinkHref={Bg}
+        overflow='visible' />
+        <image width='137' height='56' id='Eye-l' xlinkHref={Eye}
+        transform='translate(491 628)' overflow='visible' />
+        <image width='228' height='18' id='Mouse' xlinkHref={Mouse}
+        transform='translate(290 994)' overflow='visible' />
+        <image width='137' height='56' id='Eye-l_1_' xlinkHref={Eye}
+        transform='scale(-1 1) rotate(-1.81 19632.602 11188.444)' overflow='visible'
+        />
         <g transform='translate(186 516)'>
           <path className='eyeBrow' fill='#030303' style={eyeBrowLeftStyle} d='M403.11,0.7c21.11,3.18,41.95,7.16,60.12,20.7C409.2,26.83,355.96,33.97,304,48.65 c-6.73,1.9-12.99,8.61-20.89,3.05c0-1.67,0-3.33,0-5c5.29-14.98,14.91-24.33,30.72-29.4c23.08-7.39,46.41-12.96,70.28-16.6 c1.33,0,2.67-0.28,4-0.4c4.14-0.36,7.9-0.44,12,0C401.11,0.41,402.11,0.7,403.11,0.7z'/>
           <path className='eyeBrow' fill='#030303' style={eyeBrowRightStyle} d='M60.12,0.7C39.01,3.88,18.17,7.86,0,21.41c54.03,5.43,107.27,12.57,159.24,27.25 c6.73,1.9,12.99,8.61,20.89,3.05c0-1.67,0-3.33,0-5c-5.29-14.98-14.91-24.33-30.72-29.4C126.32,9.92,103,4.35,79.12,0.7 c-1.33,0-2.67-0.28-4-0.4c-4.14-0.36-7.9-0.44-12,0C62.13,0.41,61.12,0.7,60.12,0.7z'
