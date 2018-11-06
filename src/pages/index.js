@@ -27,10 +27,6 @@ class IndexPage extends React.Component {
     }
   }
 
-  compoenntWillUpdate() {
-    // console.log(this.state.ua)
-  }
-
   componentDidMount() {
     var getDevice = (function(){
       var ua = navigator.userAgent;
@@ -96,7 +92,6 @@ class IndexPage extends React.Component {
   }
 
   handleMouseMove(event) {
-    console.log(event.touches, 'event')
     this.setState({
       x: event.clientX,
       y: event.clientY
@@ -108,8 +103,6 @@ class IndexPage extends React.Component {
       x: event.touches[0].clientX,
       y: event.touches[0].clientY
     })
-    console.log(this.state)
-
   }
 
   render() {
@@ -139,8 +132,6 @@ class IndexPage extends React.Component {
     } : {
       display: 'none'
     }
-
-    console.log(this.state.x, 876543)
 
     return (
       <Layout>
