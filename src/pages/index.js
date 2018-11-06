@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
       isMain: false,
       mainDisplay: false,
       scrollText: "Scroll softly, please...",
-      ua: 'pc'
+      ua: null
     }
   }
 
@@ -31,9 +31,9 @@ class IndexPage extends React.Component {
     var getDevice = (function(){
       var ua = navigator.userAgent;
       if((ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0){
-          return 'sp';
+          return 'touch';
       }else if(ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0){
-          return 'tab';
+          return 'touch';
       }else{
           return 'pc';
       }
@@ -91,12 +91,18 @@ class IndexPage extends React.Component {
     }
   }
 
-  handleMouseMove (event) {
+  handleMouseMove(event) {
     this.setState({
       x: event.clientX,
       y: event.clientY
     });
+  }
 
+  handleTouch(event) {
+    this.setState({
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY
+    })
   }
 
   render() {
@@ -134,7 +140,7 @@ class IndexPage extends React.Component {
           <div className="index-hero" style={heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
               <img className="hero-logo" src={Logo} alt=""/>
-              <Face className="hero-face" x={this.state.x} y={this.state.y}/>
+              <Face className="hero-face" x={this.state.x} y={this.state.y} ua={'pc'}/>
             </div>
             <div className="right">
               <div className="hero-message">
@@ -169,13 +175,13 @@ class IndexPage extends React.Component {
             <WorksPickUp worksData={this.props.data.motionJson} heading="Motion" />
             <WorksPickUp worksData={this.props.data.illustJson} heading="Illust" />
           </main>
-        </div> :
-
+        </div>
+        :
         <div className="index-wrapper">
-          <div className="index-hero" id="hero">
+          <div className="index-hero" id="hero" onTouchStart={this.handleTouch.bind(this)}>
             <div className="left" data-hovertype="pink">
               <img className="hero-logo" src={Logo} alt=""/>
-              <Face className="hero-face"/>
+              <Face className="hero-face" x={this.state.x} y={this.state.y} ua={'touch'}/>
             </div>
             <div className="right">
               <div className="hero-message">
