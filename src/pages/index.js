@@ -134,7 +134,7 @@ class IndexPage extends React.Component {
           <div className="index-hero" style={heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
               <img className="hero-logo" src={Logo} alt=""/>
-              <Face className="hero-face" x={this.state.x} y={this.state.y}/>
+              <Face className="hero-face"/>
             </div>
             <div className="right">
               <div className="hero-message">
