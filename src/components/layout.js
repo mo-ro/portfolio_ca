@@ -37,106 +37,6 @@ class Layout extends React.Component {
       y: event.clientY,
       hovertype: (event.target.getAttribute('data-hovertype')),
     })
-
-    switch (this.state.hovertype) {
-      case 'text':
-        this.setState({
-          pointerStyle: {
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1.8) rotate(45deg)`,
-            background: '#f73859',
-            opacity: .3
-          }
-        })
-        break
-
-      case 'pink':
-        this.setState({
-          pointerStyle: {
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
-            background: '#fff',
-            opacity: 1
-          }
-        })
-      break
-
-      case 'header':
-        this.setState({
-          pointerStyle: {
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1.6) rotate(45deg)`,
-            background: '#f73859',
-            opacity: 1
-          }
-        })
-      break
-
-      case 'global-link':
-        this.setState({
-          pointerStyle: {
-            borderRadius: 0,
-            boxSizing: 'border-box',
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(0deg)`,
-            // background: '#f73859',
-            border: '2px solid #f73859',
-            width: '84px',
-            height: '28px',
-            left: '-42px',
-            top: '-20px',
-            opacity: 1
-          }
-        })
-      break
-
-      case 'link':
-        this.setState({
-          pointerStyle: {
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
-            background: 'transparent',
-            borderTop: '4px solid #f73859',
-            borderRight: '4px solid #f73859',
-            borderRadius: 0,
-            width: 10,
-            height: 10,
-            opacity: 1,
-          }
-        })
-      break
-
-      case 'link-white':
-        this.setState({
-          pointerStyle: {
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
-            background: 'transparent',
-            borderTop: '4px solid #fff',
-            borderRight: '4px solid #fff',
-            borderRadius: 0,
-            width: 10,
-            height: 10,
-            opacity: 1,
-          }
-        })
-      break
-
-      case 'default':
-        this.setState({
-          pointerStyle: {
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
-            background: '#fff',
-            opacity: 0
-          }
-        })
-
-      break
-    
-      default:
-        this.setState({
-          pointerStyle: {
-            transform: `translate(${this.state.x}px, ${this.state.y}px) scale(1) rotate(45deg)`,
-            background: '#f73859',
-            opacity: 1
-          }
-        })
-      break
-    }
   }
 
   onMouseDown(event) {
@@ -147,7 +47,101 @@ class Layout extends React.Component {
     // TODO: chnge emotion
   }
 
+  static getDerivedStateFromProps(props, state) {
+    let pointerStyle
+    switch (state.hovertype) {
+      
+      case 'text':
+        pointerStyle = {
+          transform: `translate(${state.x}px, ${state.y}px) scale(1.8) rotate(45deg)`,
+          background: '#f73859',
+          opacity: .3
+        }
+      break
+
+      case 'pink':
+        pointerStyle = {
+          transform: `translate(${state.x}px, ${state.y}px) scale(1) rotate(45deg)`,
+          background: '#fff',
+          opacity: 1
+        }
+      break
+
+      case 'header':
+        pointerStyle = {
+          transform: `translate(${state.x}px, ${state.y}px) scale(1.6) rotate(45deg)`,
+          background: '#f73859',
+          opacity: 1
+        }
+      break
+
+      case 'global-link':
+        pointerStyle = {
+          borderRadius: 0,
+          boxSizing: 'border-box',
+          transform: `translate(${state.x}px, ${state.y}px) scale(1) rotate(0deg)`,
+          // background: '#f73859',
+          border: '2px solid #f73859',
+          width: '84px',
+          height: '28px',
+          left: '-42px',
+          top: '-20px',
+          opacity: 1
+        }
+      break
+
+      case 'link':
+        pointerStyle = {
+          transform: `translate(${state.x}px, ${state.y}px) scale(1) rotate(45deg)`,
+          background: 'transparent',
+          borderTop: '4px solid #f73859',
+          borderRight: '4px solid #f73859',
+          borderRadius: 0,
+          width: 10,
+          height: 10,
+          opacity: 1,
+        }
+      break
+
+      case 'link-white':
+        pointerStyle = {
+          transform: `translate(${state.x}px, ${state.y}px) scale(1) rotate(45deg)`,
+          background: 'transparent',
+          borderTop: '4px solid #fff',
+          borderRight: '4px solid #fff',
+          borderRadius: 0,
+          width: 10,
+          height: 10,
+          opacity: 1,
+        }
+      break
+
+      case 'default':
+        pointerStyle = {
+          transform: `translate(${state.x}px, ${state.y}px) scale(1) rotate(45deg)`,
+          background: '#fff',
+          opacity: 0
+        }
+
+      break
+    
+      default:
+        pointerStyle = {
+          transform: `translate(${state.x}px, ${state.y}px) scale(1) rotate(45deg)`,
+          background: '#f73859',
+          opacity: 1
+        }
+      break
+
+    }
+
+    return {
+      pointerStyle: pointerStyle
+    }
+  }
+
   render() {
+    
     return (
       <StaticQuery
         query={graphql`
