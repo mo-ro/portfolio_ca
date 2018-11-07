@@ -20,6 +20,14 @@ class Face extends React.Component {
         transition: null
       },
 
+      rightBrow: {
+        transform: null
+      },
+
+      leftBrow: {
+        transform: null
+      },
+
       faceState: {
         rcx: null,
         rcy: null,
@@ -38,24 +46,48 @@ class Face extends React.Component {
       const face = ReactDOM.findDOMNode(this.refs.face).getBoundingClientRect();
 
       this.setState({
-        rcx: rightEye.x + rightEye.width / 2,
-        rcy: rightEye.y + window.pageYOffset + rightEye.height / 2,
-        lcx: leftEye.x + leftEye.width / 2,
-        lcy: leftEye.y + window.pageYOffset + leftEye.height / 2,
-        faceX: face.x + face.width / 2,
-        faceY: face.y + window.pageYOffset + face.height / 2
+        faceState: {
+          rcx: rightEye.x + rightEye.width / 2,
+          rcy: rightEye.y + window.pageYOffset + rightEye.height / 2,
+          lcx: leftEye.x + leftEye.width / 2,
+          lcy: leftEye.y + window.pageYOffset + leftEye.height / 2,
+          faceX: face.x + face.width / 2,
+          faceY: face.y + window.pageYOffset + face.height / 2
+        }
       })
     }, 500);
   }
   
   static getDerivedStateFromProps(props, state) {
-    let rangle = Math.atan2(props.y - state.rcy, props.x - state.rcx);
-    let langle = Math.atan2(props.y - state.lcy, props.x - state.lcx);
+    let rangle = Math.atan2(props.y - state.faceState.rcy, props.x - state.faceState.rcx);
+    let langle = Math.atan2(props.y - state.faceState.lcy, props.x - state.faceState.lcx);
 
-    let rbcx = state.rcx / 6 * Math.cos(rangle)
-    let rbcy = state.rcy / 60 * Math.sin(rangle)
-    let lbcx = state.lcx / 8 * Math.cos(langle)
-    let lbcy = state.lcy / 60 * Math.sin(langle)
+    let rbcx = state.faceState.rcx / 6 * Math.cos(rangle)
+    let rbcy = state.faceState.rcy / 60 * Math.sin(rangle)
+    let lbcx = state.faceState.lcx / 8 * Math.cos(langle)
+    let lbcy = state.faceState.lcy / 60 * Math.sin(langle)
+
+    let distance = Math.sqrt(Math.pow(state.faceState.faceX - props.x, 2) + Math.pow(state.faceState.faceY - props.y, 2))
+
+    let rightBrowStyle,
+        leftBrowStyle
+
+    if(distance > 400) {
+      rightBrowStyle = {
+        transform: 'translate(0, -20px) rotate(-10deg)'
+      }
+      leftBrowStyle = {
+        transform: 'translate(0, -100px) rotate(10deg)'
+      }
+
+    } else if(distance < 120) {
+      rightBrowStyle = {
+        transform: 'translate(30px, 20px) rotate(10deg)'
+      }
+      leftBrowStyle = {
+        transform: 'translate(-30px, 100px) rotate(-10deg)'
+      }
+    }
 
     return {
       rightEyeStyle: {
@@ -65,52 +97,16 @@ class Face extends React.Component {
       leftEyeStyle: {
         transform: `translate(${lbcx}px, ${lbcy}px)`,
         transition: (props.ua === 'touch' ? '0.2s' : null)
-      }
+      },
+      leftBrowStyle,
+      rightBrowStyle
     }
-  }
-
-  setRightBrow(distance) {
-    let style;
-    if(distance > 600) {
-      style = {
-        transform: 'translate(0, -20px) rotate(-10deg)'
-      }
-    } else if(distance < 200) {
-      style = {
-        transform: 'translate(30px, 20px) rotate(10deg)'
-      }
-    }
-    return style
-  }
-
-  setLeftBrow(distance) {
-    let style;
-    if(distance > 600) {
-      style = {
-        transform: 'translate(0, -100px) rotate(10deg)'
-      }
-    } else if(distance < 200) {
-      style = {
-        transform: 'translate(-30px, 100px) rotate(-10deg)'
-      }
-    }
-    return style
-  }
-
-  handleClick(event) {
-
   }
 
   render() {
 
-    let distance = Math.sqrt(Math.pow(this.faceX - this.props.x, 2) + Math.pow(this.faceY - this.props.y, 2))
-
-    let eyeBrowRightStyle = this.setRightBrow(distance)
-    let eyeBrowLeftStyle = this.setLeftBrow(distance)
-    let faceStyle
-
     return (
-      <svg className={this.props.className} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' viewBox='0 0 827 1216' style={faceStyle} onClick={this.handleClick.bind(this)}>
+      <svg className={this.props.className} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' viewBox='0 0 827 1216'>
         <image width='827' height='1216' id='Hige' ref="face" xlinkHref={Bg}
         overflow='visible' />
         <image width='137' height='56' id='Eye-l' xlinkHref={Eye}
@@ -121,8 +117,8 @@ class Face extends React.Component {
         transform='scale(-1 1) rotate(-1.81 19632.602 11188.444)' overflow='visible'
         />
         <g transform='translate(186 516)'>
-          <path className='eyeBrow' fill='#030303' style={eyeBrowLeftStyle} d='M403.11,0.7c21.11,3.18,41.95,7.16,60.12,20.7C409.2,26.83,355.96,33.97,304,48.65 c-6.73,1.9-12.99,8.61-20.89,3.05c0-1.67,0-3.33,0-5c5.29-14.98,14.91-24.33,30.72-29.4c23.08-7.39,46.41-12.96,70.28-16.6 c1.33,0,2.67-0.28,4-0.4c4.14-0.36,7.9-0.44,12,0C401.11,0.41,402.11,0.7,403.11,0.7z'/>
-          <path className='eyeBrow' fill='#030303' style={eyeBrowRightStyle} d='M60.12,0.7C39.01,3.88,18.17,7.86,0,21.41c54.03,5.43,107.27,12.57,159.24,27.25 c6.73,1.9,12.99,8.61,20.89,3.05c0-1.67,0-3.33,0-5c-5.29-14.98-14.91-24.33-30.72-29.4C126.32,9.92,103,4.35,79.12,0.7 c-1.33,0-2.67-0.28-4-0.4c-4.14-0.36-7.9-0.44-12,0C62.13,0.41,61.12,0.7,60.12,0.7z'
+          <path className='eyeBrow' fill='#030303' style={this.state.leftBrowStyle} d='M403.11,0.7c21.11,3.18,41.95,7.16,60.12,20.7C409.2,26.83,355.96,33.97,304,48.65 c-6.73,1.9-12.99,8.61-20.89,3.05c0-1.67,0-3.33,0-5c5.29-14.98,14.91-24.33,30.72-29.4c23.08-7.39,46.41-12.96,70.28-16.6 c1.33,0,2.67-0.28,4-0.4c4.14-0.36,7.9-0.44,12,0C401.11,0.41,402.11,0.7,403.11,0.7z'/>
+          <path className='eyeBrow' fill='#030303' style={this.state.rightBrowStyle} d='M60.12,0.7C39.01,3.88,18.17,7.86,0,21.41c54.03,5.43,107.27,12.57,159.24,27.25 c6.73,1.9,12.99,8.61,20.89,3.05c0-1.67,0-3.33,0-5c-5.29-14.98-14.91-24.33-30.72-29.4C126.32,9.92,103,4.35,79.12,0.7 c-1.33,0-2.67-0.28-4-0.4c-4.14-0.36-7.9-0.44-12,0C62.13,0.41,61.12,0.7,60.12,0.7z'
           />
           <path className='st1' style={this.state.leftEyeStyle} ref="leftEye" fill='#050505' d='M355.97,163.38c-12.41-7.58-16.38-18.9-11.2-31.62c0.99-2.42,2.4-4.28,4.55-5.72 c11.5-7.73,24.63-6.5,35.32,1.24c0.91,0.66,1.72,1.62,2.24,2.62c4.79,9.19,0.49,24.98-8.38,30.31c-2.31,1.39-5.01,2.13-7.54,3.17 C365.72,164.89,360.05,164.78,355.97,163.38z M363.21,141.41c-0.4-1.9-1.45-3.23-3.64-3.15c-2.24,0.08-3.96,1.13-3.88,3.55 c0.07,2.17,1.27,3.96,3.72,3.65C361.46,145.19,362.99,143.88,363.21,141.41z M362.57,155.71c4.89,1.05,9.82,2.15,13.07-3.38 C371.41,154.09,367.41,156.84,362.57,155.71z'
           />
