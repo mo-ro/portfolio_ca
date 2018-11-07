@@ -7,12 +7,11 @@ let headerStyle
 
 class Header extends React.Component {
 
-  shouldComponentUpdate() {
-    return false
+  shouldComponentUpdate(nextProps) {
+    return (this.props.active !== nextProps.active)
   }
 
   render() {
-    
     return (
       <header className="global-header" data-hovertype="header" style={headerStyle}>
         <div className="left" data-active={this.props.active === '' ? false : true}>
