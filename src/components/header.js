@@ -7,22 +7,9 @@ let headerStyle
 
 class Header extends React.Component {
 
-  constructor() {
-    super()
-    this.state = {
-      isScroll: false
-    }
+  shouldComponentUpdate() {
+    return false
   }
-
-  // componentDidMount() {
-  //   headerStyle = (window.pageYOffset > 0) ? {
-  //     boxShadow: '0 2px 8px rgba(0, 0, 0, .3)',
-  //     background: 'rgba(255, 255, 255, .9)',
-  //   } : {
-  //     boxShadow: '0 0 0 rgba(0, 0, 0, .3)',
-  //     background: 'rgba(255, 255, 255, 0)'
-  //   }
-  // }
 
   render() {
     
