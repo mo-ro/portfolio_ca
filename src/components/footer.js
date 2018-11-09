@@ -3,11 +3,6 @@ import React from 'react'
 import moai from '../images/moai.svg'
 
 class Footer extends React.PureComponent {
-
-  shouldComponentUpdate() {
-    return false
-  }
-  
   render() {
     return (
       <footer className="global-footer">

@@ -23,7 +23,8 @@ class IndexPage extends React.Component {
       isMain: false,
       mainDisplay: false,
       scrollText: "Scroll softly, please...",
-      ua: null
+      ua: null,
+      heroStyle: null,
     }
   }
 
@@ -46,10 +47,12 @@ class IndexPage extends React.Component {
 
   closeWheel(event) {
     if(window.pageYOffset === 0 && event.deltaY < 0) {
+
       this.setState({
         scrollAmount: 0,
         scrollText: "Scroll softly, please..."
       })
+
       setTimeout(() => {
         this.setState({
           isHero: true,
@@ -63,9 +66,11 @@ class IndexPage extends React.Component {
         })
       }, 400);
     } else if (window.pageYOffset === 0 && event.deltaY > 0) {
+
       this.setState({
-        scrollAmount: 1,
+        scrollAmount: 150,
       })
+
       setTimeout(() => {
         this.setState({
           isHero: false,
@@ -105,16 +110,24 @@ class IndexPage extends React.Component {
     })
   }
 
+  static getDerivedStateFromProps(props, state) {
+    return (
+      state.isHero ? {
+        heroStyle: {
+          transform: 'translate(0, 0) scale(1)',
+          opacity: 1
+        } 
+      } : {
+        heroStyle: {
+          transform: 'translate(0, -20px) scale(1)',
+          opacity: 0,
+          pointerEvents: 'none'
+        }
+      }
+    )
+  }
+
   render() {
-    let circleRate = this.state.scrollAmount * 150
-    let heroStyle = this.state.isHero ? {
-      transform: 'translate(0, 0) scale(1)',
-      opacity: 1
-    } : {
-      transform: 'translate(0, -20px) scale(1)',
-      opacity: 0,
-      pointerEvents: 'none'
-    }
     let mainStyle = this.state.isMain ? {
       opacity: 1,
       transform: 'translate(0, 0) scale(1)',
@@ -123,8 +136,8 @@ class IndexPage extends React.Component {
       transform: 'translate(0, 0px) scale(1.05)',
     }
     let circleStyle = {
-      transform: `rotate(${circleRate}deg)`,
-      backgroundColor: ((circleRate === 150) ? 'rgba(247, 56, 89, .2)' : 'rgba(247, 56, 89, 0)')
+      transform: `rotate(${this.state.scrollAmount}deg)`,
+      backgroundColor: ((this.state.scrollAmount === 150) ? 'rgba(247, 56, 89, .2)' : 'rgba(247, 56, 89, 0)')
     }
 
     let mainDisplayStyle = this.state.mainDisplay ? {
@@ -137,7 +150,7 @@ class IndexPage extends React.Component {
       <Layout>
       {this.state.ua === 'pc' ?
         <div className="index-wrapper">
-          <div className="index-hero" style={heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
+          <div className="index-hero" style={this.state.heroStyle} onTouchMove={this.closeWheel.bind(this)} onWheel={this.closeWheel.bind(this)} id="hero" onMouseMove={this.handleMouseMove.bind(this)}>
             <div className="left" data-hovertype="pink">
               <img className="hero-logo" src={Logo} alt=""/>
               <Face className="hero-face" x={this.state.x} y={this.state.y} ua={'pc'}/>
