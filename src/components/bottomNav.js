@@ -1,11 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-class BottomNav extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    return (this.props.active !== nextProps.active)
-  }
-  
+class BottomNav extends React.PureComponent {
   render() {
     return (
       <nav className="bottom-nav">

@@ -2,15 +2,26 @@ import React from 'react'
 import { Link } from 'gatsby'
 import ReactDOM from 'react-dom';
 
-class linkButton extends React.Component {
+class linkButton extends React.PureComponent {
 
   constructor() {
     super();
     this.state = {
       scale: 0,
       x: 0,
-      y: 0
+      y: 0,
+      buttonStyle: null,
     }
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    return ({
+      buttonStyle: {
+        transform: `scale(${state.scale})`,
+        top: state.y,
+        left: state.x
+      }
+    })
   }
 
   onMouseEnter(event) {
@@ -30,19 +41,12 @@ class linkButton extends React.Component {
   }
 
   render() {
-
-    let buttonStyle = {
-      transform: `scale(${this.state.scale})`,
-      top: this.state.y,
-      left: this.state.x
-    }
-
     return (
       <Link to={this.props.link} className="link-button" data-hovertype="link" onMouseMove={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} state={this.props.state}>
         <div className="text" data-color="pink">
           {this.props.text}
         </div>
-        <div className="cover" style={buttonStyle}></div>
+        <div className="cover" style={this.state.buttonStyle}></div>
       </Link>
     )
   }
