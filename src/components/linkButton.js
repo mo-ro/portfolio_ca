@@ -41,7 +41,6 @@ class linkButton extends React.PureComponent {
   }
 
   render() {
-console.log(this.props)
     return (
       <Link to={this.props.link} className="link-button" data-hovertype="link" onMouseMove={this.onMouseEnter.bind(this)} onMouseLeave={this.onMouseLeave.bind(this)} state={this.props.state}>
         <div className="text" data-color="pink">

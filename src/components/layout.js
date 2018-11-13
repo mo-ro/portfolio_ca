@@ -141,7 +141,6 @@ class Layout extends React.Component {
   }
 
   render() {
-    
     return (
       <StaticQuery
         query={graphql`
