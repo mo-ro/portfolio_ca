@@ -166,7 +166,7 @@ class Layout extends React.Component {
                   { property: 'og:title', content: data.site.siteMetadata.title },
                   { property: 'og:type', content: 'website' },
                   { property: 'og:url', content: data.site.siteMetadata.url },
-                  { property: 'og:image', content: ogpImage },
+                  { property: 'og:image', content: data.site.siteMetadata.image },
                   { property: 'og:description', content: data.site.siteMetadata.description },
                   {property: "og:site_name", content: data.site.siteMetadata.name},
                   { name: 'twitter:card', content: 'summary_large_image' },

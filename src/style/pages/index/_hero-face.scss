@@ -4,16 +4,14 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 240px;
-  animation: 
-    float 2s ease-in-out infinite alternate,
-    tilt 10s ease-out infinite;
+  animation: float 2s ease-in-out infinite alternate, tilt 10s ease-out infinite;
 
   @include mq-medium {
     width: 180px;
   }
 
   .eyeBrow {
-    transition: transform .5s cubic-bezier(.16,.92,.43,1);
+    transition: transform 0.5s cubic-bezier(0.16, 0.92, 0.43, 1);
   }
 }
 
@@ -39,7 +37,7 @@
   20% {
     transform: translate(-50%, -50%) rotate(10deg);
   }
-  
+
   22% {
     transform: translate(-50%, -50%);
   }
