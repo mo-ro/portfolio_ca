@@ -5,7 +5,7 @@ module.exports = {
     name: "Kotaro's portfolio / Front-End Developer",
     description: "Hi! I'm Kotaro Front-end developer. If you are free now, check this out!",
     url: 'https://morotee.com',
-    image: 'https://github.com/mo-ro/portfolio_ca/blob/master/src/images/ogp.png?raw=true',
+    image: "https://github.com/mo-ro/portfolio_ca/blob/master/src/images/ogp.png?raw=true",
   },
   plugins: [
     'gatsby-plugin-react-helmet',
