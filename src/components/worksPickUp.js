@@ -13,7 +13,7 @@ class worksPickUp extends React.Component {
       case 'motion':
         return 1
 
-      case 'illust':
+      case 'graphic':
         return 2
     
       default:

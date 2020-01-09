@@ -26,7 +26,7 @@ class Works extends React.Component {
             <TabList className="list">
               <Tab className="tab">Web</Tab>
               <Tab className="tab">Motion Graphic</Tab>
-              <Tab className="tab">Illustration</Tab>
+              <Tab className="tab">Graphics</Tab>
             </TabList>
         
             <TabPanel className="panel">
@@ -52,11 +52,11 @@ class Works extends React.Component {
               </ul>
             </TabPanel>
             <TabPanel className="panel">
-              <UnderLineHeading heading="Illustration"/>
+              <UnderLineHeading heading="Graphics"/>
               <ul className="works-list">
-                {this.props.data.illustJson.works.map((work, index) => {
+                {this.props.data.graphicJson.works.map((work, index) => {
                   return (
-                    <WorksItem work={work} type={this.props.data.illustJson.type} index={index+1} key={index}/>
+                    <WorksItem work={work} type={this.props.data.graphicJson.type} index={index+1} key={index}/>
                   )
                 })}
                 <div className="item -visible"></div>
@@ -91,7 +91,7 @@ export const pageQuery = graphql`
         images
       }
     }
-    illustJson {
+    graphicJson {
       type
       works {
         name

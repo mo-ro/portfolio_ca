@@ -1,7 +1,7 @@
 const path = require('path')
 const motionData = require('./src/works/motion/motion.json')
 const webData = require('./src/works/web/web.json')
-const illustData = require('./src/works/illust/illust.json')
+const illustData = require('./src/works/graphic/graphic.json')
 
 exports.createPages = ({ boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -37,7 +37,7 @@ exports.createPages = ({ boundActionCreators }) => {
   })
 
   illustData.works.forEach((page, index) => {
-    const path = "works/illust/" + (index + 1)
+    const path = "works/graphic/" + (index + 1)
     
     createPage({
       path,

@@ -168,7 +168,7 @@ class Layout extends React.Component {
                   { property: 'og:description', content: data.site.siteMetadata.description },
                   {property: "og:site_name", content: data.site.siteMetadata.name},
                   { name: 'twitter:card', content: 'summary_large_image' },
-                  { name: 'twitter:site', content: '@alignItems' }
+                  { name: 'twitter:site', content: '@mo__ro__' }
                 ]}
               >
                 <html lang="en" />
