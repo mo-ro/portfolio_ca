@@ -75,7 +75,7 @@ class About extends React.Component {
                 <div className="profile-table">
                   <div className="line">
                     <div className="left">Name</div>
-                    <div className="right">Kotaro Moaooka</div>
+                    <div className="right">Kotaro Morooka</div>
                   </div>
                   <div className="line">
                     <div className="left">Gender</div>
